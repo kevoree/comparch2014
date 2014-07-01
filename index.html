@@ -1,0 +1,2907 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Comparch'14, François Fouquet, Olivier Barais, Noel Plouzeau</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="shower/themes/kevoree/styles/screen.css">
+    <link rel="stylesheet" href="extra/css/ionicons.css">
+    <link rel="stylesheet" href="fonts/fontawesome/font-awesome.min.css">
+    
+    <link rel='stylesheet' href='fonts/iconic_fill/iconic_fill.css' type='text/css' media='screen'/>
+    <link rel="stylesheet" href="fonts/foundation-icons-general/stylesheets/foundation-icons-general.css">
+    <link rel="stylesheet" href="fonts/heydings-common-icons-fontfacekit/stylesheet.css">
+    <link rel="stylesheet" href="fonts/raphaelicons/raphaelicons.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="brush/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="brush/shCoreKev.css"/>
+
+
+    <script type="text/javascript" src="brush/shCore.js"></script>
+    <script type="text/javascript" src="brush/shBrushJava.js"></script>
+    <script type="text/javascript" src="brush/shBrushKevs.js"></script>
+
+
+
+    <style>
+
+        .kevOrange {
+            color: #DF9D00;
+        }
+
+        .kevGray {
+            color: #666;
+        }
+
+        .slide code {
+            background-color: rgba(223, 157, 41, 0.4);
+        }
+
+        details {
+            display: none;
+        }
+    </style>
+
+    <link rel='stylesheet' href='fonts/iconic_fill/iconic_fill.css' type='text/css' media='screen'/>
+    <link rel="stylesheet" href="fonts/foundation-icons-general/stylesheets/foundation-icons-general.css">
+    <link rel="stylesheet" href="fonts/heydings-common-icons-fontfacekit/stylesheet.css">
+    <link rel="stylesheet" href="fonts/raphaelicons/raphaelicons.css" type="text/css">
+    <link rel="stylesheet" href="fonts/fontawesome/font-awesome.min.css" type="text/css">
+
+
+
+
+    
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Comparch'2014, Distributed Models@Run.time: Kevoree Project</h1>
+		<p>François Fouquet (SnT Luxembourg), Olivier Barais and Noel Plouzeau (IRISA Rennes), Kevoree.org.</p>
+	</header>
+	
+	<section class="slide cover" id="Cover"><div>
+		<img src="pictures/IMG_3572-1024-640.png" alt="">
+		<style>
+            .iconFont3 {
+                font-family: 'HeydingsCommonIconsRegular';
+            }
+			#Cover h2 {
+				margin:0px 0 0;
+				text-align:center;
+				font-size:50px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+				}
+		</style>
+        <div style="background-color:#FFF;position:absolute;top:20px;left:0px;width:750px;border-radius:0px 10px 10px 0px;height:100px;opacity:0.8;">
+			<h1><strong class="kevOrange" style="margin-left:10px;"> Comparch'2014: Distributed Models@Run.time : Kevoree Project</strong><br /><i class="kevGray" style="margin-left:10px;font-size:20px;"> by François Fouquet <i class="kevGray">(SnT Luxembourg)</i>, Olivier Barais and Noel Plouzeau<i class="kevGray">(IRISA Rennes)</i></i><h1> 
+        </div>
+		
+        <div style="opacity:0.7;background-color:#FFF;position:absolute;bottom:20px;left:0px;width:120px;border-radius:0px 10px 10px 0px;height:100px;">
+            <img src="img/UL.jpg" style="height:80px;padding-top:10px;padding-left:10px;" />
+        </div>
+
+         <div style="opacity:0.7;background-color:#FFF;position:absolute;bottom:140px;left:0px;width:120px;border-radius:0px 10px 10px 0px;height:100px;">
+            <img src="img/logosnt.png" style="height:70px;padding-top:15px;padding-left:18px;" />
+        </div>
+                
+        <div style="opacity:0.7;background-color:#FFF;position:absolute;bottom:20px;right:0px;width:250px;border-radius:10px 0px 0px 10px;height:100px;">
+            <img src="figures/logo_rennes1.png" style="height:60px;padding-top:20px;padding-left:18px;" />
+        </div>
+		
+         <div style="opacity:0.7;background-color:#FFF;position:absolute;bottom:140px;right:0px;width:250px;border-radius:10px 0px 0px 10px;height:100px;">
+            <img src="img/HeadsBannerLarge.png" style="height:60px;padding-top:20px;padding-left:18px;" />
+        </div>
+                
+        <div style="opacity:0.7;background-color:#FFF;position:absolute;bottom:260px;right:0px;width:250px;border-radius:10px 0px 0px 10px;height:100px;">
+            <img src="img/logo-irisa.png" style="height:50px;padding-top:20px;padding-left:18px;" />
+        </div>
+                
+        <div style="opacity:0.7;background-color:#FFF;position:absolute;bottom:380px;right:0px;width:250px;border-radius:10px 0px 0px 10px;height:100px;">
+            <img src="img/logoInria.png" style="height:80px;padding-top:10px;padding-left:18px;" />
+        </div>
+                
+	</div></section>
+		     
+	<section class="slide"><div>
+        <h2><span class="kevOrange ion-android-note kevIcon"></span> Talk overview</h2>
+        <ul>
+            <li><span class="kevOrange"><span class="ion-ionic kevOrange kevIcon"></span> Distributed</span> Adaptive Systems </li>
+            <li><span class="kevOrange"><span class="ion-loop kevOrange kevIcon"></span> Distributed</span> Models@Run.time </li>
+            <li><span class="kevOrange"><span class="ion-android-share kevOrange kevIcon"></span> Kevoree</span> project</li>
+            <li><span class="kevOrange"><span class="ion-android-developer kevOrange kevIcon"></span> Hands on </span> Tutorial</li>
+            <li><span class="kevOrange"><span class="ion-beaker kevOrange kevIcon"></span> Related research activities</span></li>
+            <li><span class="kevOrange"><span class="ion-android-location kevOrange kevIcon"></span> Wrap-up</span></li>
+        </ul>
+    </div></section>	
+
+<section class="slide"><div>
+<h2><span class="kevOrange kevIcon ion-chatbubble"></span> Speakers</h2>
+    <ul>
+    <li><span class="kevOrange"> Olivier Barais</span> : Maître de conférences <br /> <i class="kevGray">ISTIC University of Rennes 1</i></li>  
+    <li><span class="kevOrange"> Noel Plouzeau</span> : Maître de conférences <br /> <i class="kevGray">ISTIC University of Rennes 1</i></li>  
+    </ul>
+</div></section>
+
+<section class="slide">
+    <div>
+        <h2><span class="ion-settings kevOrange kevIcon"></span> Hands-on tutorial</h2>
+        <ul>
+            <li><span class="ion-arrow-right-b kevOrange kevIcon"></span> Environment setup <span class="kevGray">(practice 0)</span></li>
+            <li><span class="ion-arrow-right-b kevOrange kevIcon"></span> First distributed applications <span class="kevGray">(practice 1)</span></li>
+            <li><span class="ion-arrow-right-b kevOrange kevIcon"></span> Develop with Kevoree: From source code to deployment <span class="kevGray">(practice 2)</span></li>
+            <li><span class="ion-arrow-right-b kevOrange kevIcon"></span> Runtime adaptation using Models@Runtime <span class="kevGray">(practice 3)</span></li>
+            <li><span class="ion-arrow-right-b kevOrange kevIcon"></span> Models for Managing cloud <span class="kevGray">(practice 4)</span></li>
+            <li><span class="ion-arrow-right-b kevOrange kevIcon"></span> Kevoree in the small <span class="kevGray">(practice 5)</span></li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Motivations</h2>
+</div></section>
+
+<section class="slide"><div>
+     <h2>A software system design is...</h2>
+    
+    
+<div class="kevIcon">
+    <div style="font-size:40px;">
+        <div class="icon-folder-close-alt kevOrange" style="float:right;margin-left:10px;"></div>
+        <div class="icon-folder-close-alt kevOrange" style="float:right;margin-left:10px;"></div>
+        <div class="icon-folder-close-alt kevOrange" style="float:right;margin-left:10px;"></div>
+        <div class="icon-folder-close-alt kevOrange" style="float:right;margin-left:10px;"></div>
+        <div style="clear:both;"></div>
+        <div style="background-color:#DF9D00;width:210px;position:absolute;left:710px;top:182px;height:55px;opacity: 0.3;border-radius:5px;"></div>
+    </div>
+    <span class="kevGray" style="font-size:20px;position:absolute;right:175px;top:240px;">System</span>
+</div>
+    
+
+    <div style="padding-top:50px;">
+        <ul>
+            <li>Modular conception
+                <div class="icon-circle-arrow-right kevOrange kevIcon"></div> (<i class="kevGray">Dijkstra'74</i>)
+                <ul>
+                    <li>Splitted by fonctionality</li>
+                    <li><span class="kevOrange">Module</span>
+                        <span class=" icon-folder-close-alt kevOrange kevIcon"></span>
+                        <span class=" icon-reorder kevGray kevIcon"></span> reusable units
+                    </li>
+                    <li>System
+                        <span class=" icon-reorder kevOrange kevIcon"></span>
+                        <span class="kevOrange">assembly</span> of modules
+                    </li>
+                    <li>Modules communicates through services, messages brokers...</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div></section>
+   
+<section class="slide"><div>
+    <h2>From V cycles to continuous design...</h2>
+    <div class="kevIcon">
+        <!-- Left -->
+        <div style="float: left;line-height:15px;">
+            <div style="text-align:center;">
+                <div class=" icon-ok-circle kevOrange" style="font-size:50px;"></div>
+            </div>
+            <div style="padding-top:10px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+            </div>
+            
+            
+            <span class="kevGray" style="font-size:20px;position:absolute;left:305px;top:260px;">System A</span>
+            <span class="kevGray" style="font-size:20px;position:absolute;left:305px;top:325px;">System <b
+                    class="kevOrange">A'</b></span>
+
+            <div style="background-color:#CCC;width:190px;position:absolute;left:110px;top:245px;height:45px;opacity:0.5;border-radius:5px;">
+            
+            </div>
+            
+            
+            
+            <div style="text-align:center;">
+                <div class=" icon-angle-down kevGray" style="font-size:30px;"></div>
+            </div>
+            <div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+            </div>
+            <span class="kevGray" style="font-size:20px;position:absolute;right:305px;top:260px;">System A</span>
+            <span class="kevGray" style="font-size:20px;position:absolute;right:305px;top:325px;">System <b
+                    class="kevOrange">A'</b></span>
+
+            <div style="background-color:#DF9D00;width:190px;position:absolute;left:110px;top:310px;height:40px;opacity: 0.5;border-radius:5px;"></div>
+        </div>
+
+        <div class="icon-circle-arrow-right kevGray"
+             style="font-size:40px;float:left; margin-left:200px; margin-top : 80px;">
+        </div>
+
+        <div style="float:right;line-height:15px;">
+            <div style="text-align:center;">
+                <div class=" icon-refresh kevOrange" style="font-size:50px;"></div>
+            </div>
+            <div style="padding-top:10px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+            </div>
+            <div style="background-color:#CCC;width:190px;position:absolute;right:110px;top:245px;height:45px;opacity: 0.5;border-radius:5px;"></div>
+            <div style="text-align:center;">
+                <div class=" icon-angle-down kevGray" style="font-size:30px;"></div>
+            </div>
+            <div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+            </div>
+            <div style="background-color:#CCC;width:42px;position:absolute;right:110px;top:310px;height:40px;opacity: 0.5;border-radius:5px;"></div>
+            <div style="background-color:#DF9D00;width:35px;position:absolute;right:152px;top:310px;height:40px;opacity: 0.5;border-radius:5px;"></div>
+            <div style="background-color:#CCC;width:70px;position:absolute;right:187px;top:310px;height:40px;opacity: 0.5;border-radius:5px;"></div>
+            <div style="background-color:#DF9D00;width:42px;position:absolute;right:257px;top:310px;height:40px;opacity: 0.5;border-radius:5px;"></div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+    <div style="padding-top:50px;">
+        <ul>
+            <li><span class="kevOrange">V Cycle</span> : application based deployement <span class="kevOrange icon-circle-arrow-right kevIcon"></span> granularity</li>
+            <li><span class="kevOrange">Continous</span> : modules based deplpyement granularity <i class="kevGray">(Crnkovic'07)</i>
+                <ul>
+                    <li>module <span class=" icon-reorder kevGray kevIcon"></span> deploy unit</li>
+                    <li>evolution <span class=" icon-reorder kevOrange kevIcon"></span> update of <span
+                            class="kevOrange">some</span> modules
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div></section>
+         
+<section class="slide">
+    <div>
+        <h2>
+            <span class="kevOrange icon-beaker"></span>Dynamic Adaptive Systems (DAS) (1/2)</h2>
+        <ul>
+            <li class="next">Adaptation
+                <span class=" icon-reorder kevOrange kevIcon"></span> any change without interruption
+                <div class="kevIcon">
+                    <span class="kevGray" style="font-size:20px;position:absolute;left:320px;bottom:35px;">
+                        System A
+                    </span>
+                    <div style="position:absolute;left:250px;bottom:60px;">
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                    </div>
+                    <div style="background-color:#CCC;width:235px;position:absolute;left:240px;bottom:65px;height:45px;opacity: 0.3;border-radius:5px;"></div>
+                    <div style="position:absolute;right:250px;bottom:60px;">
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                        <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                    </div>
+                    <div style="background-color:#DF9D00;width:235px;position:absolute;right:240px;bottom:65px;height:45px;opacity: 0.3;border-radius:5px;"></div>
+                    <span class="kevGray" style="font-size:20px;position:absolute;right:320px;bottom:35px;">
+                        System
+                        <b class="kevOrange">A'</b>
+                    </span>
+                </div>
+            </li>
+            <li class="next">Reasoning about adaptations needs a
+                <span class="kevOrange">context</span>
+            </li>
+            <li class="next">Adaptation loop
+                <span class="kevOrange">M</span>onitoring
+                <span class="kevOrange">A</span>nalyze
+                <span class="kevOrange">P</span>lan
+                <span class="kevOrange">E</span>xecution (
+                <i class="kevGray">IBM'03</i>)
+                <div class="kevIcon">
+                    <div style="position:absolute;left:250px;bottom:100px;">
+                        <div class="icon-dashboard kevOrange" style="font-size:30px"></div>
+                        <span class="kevGray">introspection</span>
+
+                        <div style="text-align:center;">
+                            <div class=" icon-arrow-up kevGray" style="font-size:30px;"></div>
+                        </div>
+                    </div>
+                    <div style="position:absolute;left:45%;bottom:150px;">
+                        <div class=" icon-arrow-right kevGray" style="font-size:20px;"></div>
+                        <div class=" icon-cogs kevGray" style="font-size:40px;"></div>
+                        <div class=" icon-arrow-right kevGray" style="font-size:20px;"></div>
+                    </div>
+                    <div style="position:absolute;right:250px;bottom:100px;">
+                        <div class="icon-wrench kevOrange" style="font-size:30px"></div>
+                        <span class="kevGray">intercession</span>
+
+                        <div style="text-align:center;">
+                            <div class=" icon-arrow-down kevGray" style="font-size:30px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+     
+<section class="slide">
+    <div>
+        <h2>
+            <span class="kevOrange icon-beaker"></span>Dynamic Adaptive Systems (DAS)
+            <span>(2/2)</span>
+        </h2>
+        <ul>
+            <li>Not limited to
+                <span class="kevOrange">*specific*</span>devices !</li>
+            <li>
+                <span class="kevOrange icon-android kevIcon"></span>Your phone updates at runtime</li>
+            <li>
+                <span class="kevOrange icon-home kevIcon"></span>Home box does dynamic updates
+                <i class="kevGray">(OSGi consortium)</i>
+            </li>
+            <li>
+                <span class="kevOrange icon-fire kevIcon"></span>Sensor networks also
+                <i class="kevGray">(ex: change pooling period)</i>
+            </li>
+            <li>
+                <span class="kevOrange icon-cloud kevIcon"></span>Cloud servers need it also to perform elastic hosting !</li>
+        </ul>
+        <div class="kevIcon">
+            <span class="kevGray" style="font-size:20px;position:absolute;left:320px;bottom:35px;">
+                System A
+            </span>
+            <div style="position:absolute;left:250px;bottom:60px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+            </div>
+            <div style="background-color:#CCC;width:235px;position:absolute;left:240px;bottom:65px;height:45px;opacity: 0.3;border-radius:5px;"></div>
+            <div style="position:absolute;right:250px;bottom:60px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+            </div>
+            <div style="background-color:#DF9D00;width:235px;position:absolute;right:240px;bottom:65px;height:45px;opacity: 0.3;border-radius:5px;"></div>
+            <span class="kevGray" style="font-size:20px;position:absolute;right:320px;bottom:35px;">
+                System
+                <b class="kevOrange">A'</b>
+            </span>
+            <div style="position:absolute;left:250px;bottom:100px;">
+                <div class="icon-dashboard kevOrange" style="font-size:30px"></div>
+                <span class="kevGray">introspection</span>
+
+                <div style="text-align:center;">
+                    <div class=" icon-arrow-up kevGray" style="font-size:30px;"></div>
+                </div>
+            </div>
+            <div style="position:absolute;left:45%;bottom:150px;">
+                <div class=" icon-arrow-right kevGray" style="font-size:20px;"></div>
+                <div class=" icon-cogs kevGray" style="font-size:40px;"></div>
+                <div class=" icon-arrow-right kevGray" style="font-size:20px;"></div>
+            </div>
+            <div style="position:absolute;right:250px;bottom:100px;">
+                <div class="icon-wrench kevOrange" style="font-size:30px"></div>
+                <span class="kevGray">intercession</span>
+
+                <div style="text-align:center;">
+                    <div class=" icon-arrow-down kevGray" style="font-size:30px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slide"><div>
+    <h2><span class="icon-map-marker kevOrange"></span> Why is software distributed on nodes?</h2>
+    <div class="next">
+        <ul>
+            <li><span class="kevOrange">Performance</span> and <span class="kevOrange">Redundancy</span>
+                <div style="position:absolute;right:100px;top:170px;" class="kevIcon">
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-hdd" style="font-size:30px;color:#E80000;"></div>
+                        <div style="border-color:#E80000;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt" style="font-size:20px;color:#E80000;"></div>
+                            <div class=" icon-folder-close-alt" style="font-size:20px;color:#E80000;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal"
+                         style="font-size:30px;float:left;margin-right: 5px;color:#E80000;"></div>
+                    <div style="line-height:0px;float:left;">
+                        <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+                        <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal kevGray"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+                        <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                            <div class=" icon-folder-close-alt" style="font-size:20px;color:#000;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal kevOrange"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-hdd kevOrange" style="font-size:30px;"></div>
+                        <div style="border-color:#DF9D00;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li class="kevGray"><i>Grid and Cloud computing</i>
+                        <div class=" icon-cloud kevOrange kevIcon" style="font-size:30px;"></div>
+                        , ...
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="next">
+        <ul>
+            <li><span class="kevOrange">Geographic</span> suitability
+                <div style="position:absolute;right:100px;top:320px;" class="kevIcon">
+                    <div class=" icon-user kevOrange" style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div class=" icon-resize-horizontal kevOrange"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;">
+                        <div class=" icon-tablet kevOrange" style="font-size:30px;"></div>
+                        <div style="border-color:#DF9D00;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal kevOrange"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+                        <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal kevGray"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+                        <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li class="kevGray"><i>Mobile devices</i></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="next">
+        <ul>
+            <li><span class="kevOrange">Physical</span> suitability
+                <div style="position:absolute;right:100px;top:470px;" class="kevIcon">
+                    <div class=" icon-fire kevOrange" style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div class=" icon-resize-horizontal kevOrange"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;">
+                        <div class=" icon-mobile-phone kevOrange" style="font-size:30px;"></div>
+                        <div style="border-color:#DF9D00;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal kevGray"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-home kevGray" style="font-size:30px;"></div>
+                        <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                    <div class=" icon-resize-horizontal kevGray"
+                         style="font-size:30px;float:left;margin-left: 5px;"></div>
+                    <div style="line-height:0px;float:left;margin-left: 5px;">
+                        <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+                        <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:24px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li class="kevGray"><i>Sensors and embedded nodes</i></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div></section>
+   
+<section class="slide"><div>
+        <h2>Adaptation <span class="kevOrange">and</span> distribution</h2>
+    <div class="next kevIcon" style="margin-left:280px;margin-top:100px;">
+        <div style="line-height:0px;float:left;margin-left: 5px;">
+            <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+            <div class=" kevGray" style="font-size:15px;margin-bottom:10px;margin-top:5px;text-align:center;">Node A
+            </div>
+            <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:20px;padding:5px;line-height:5px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+            </div>
+        </div>
+        <div class=" icon-resize-horizontal kevGray" style="font-size:30px;float:left;margin-left: 5px;"></div>
+
+        <div style="line-height:0px;float:left;margin-left: 5px;">
+            <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+            <div class=" kevGray" style="font-size:15px;margin-bottom:10px;margin-top:5px;text-align:center;">Node B
+            </div>
+            <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:20px;padding:5px;line-height:5px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+            </div>
+        </div>
+        <div class=" icon-resize-horizontal kevGray" style="font-size:30px;float:left;margin-left: 5px;"></div>
+        <div style="line-height:0px;float:left;margin-left: 5px;">
+            <div class=" icon-hdd kevGray" style="font-size:30px;"></div>
+            <div class=" kevGray" style="font-size:15px;margin-bottom:10px;margin-top:5px;text-align:center;">Node C
+            </div>
+            <div style="border-color:#CCC;border-radius:5px;border-width:2px;border-style:solid;width:20px;padding:5px;line-height:5px;">
+                <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+                <div class=" icon-folder-close-alt kevGray" style="font-size:20px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="next" style="clear:both;padding-top:30px;">
+        <span class="icon-refresh kevOrange" style="position:absolute;top:190px;left:405px;"></span>
+        <span class="icon-cogs kevGray" style="position:absolute;top:160px;left:405px;"></span>
+        <span style="color:#666;position:absolute;top:150px;left:260px;font-size:20px;">adaptation loop</span>
+        <ul>
+            <li class="next">Remote adaptation <span class="icon-cogs kevGray kevIcon" style="font-size:30px;"></span>
+                needs knowledge about remote <span class="kevOrange">current</span> state
+            </li>
+            <li class="next"><span class="icon-warning-sign kevOrange kevIcon" style="font-size:30px;"></span> Network failures break retrieve/update exchanges
+                <span class=" icon-warning-sign kevGray kevIcon"
+                      style="font-size:30px;position:absolute;left:518px;top:255px;color:#E80000;"></span>
+                <span class=" icon-resize-horizontal kevGray kevIcon"
+                      style="font-size:30px;position:absolute;left:544px;top:255px;color:#E80000;"></span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li class="next">
+                <span class="icon-bullhorn kevOrange kevIcon"></span> Keep an up-to-date <span class="kevOrange">snapshot </span> of remote nodes' state
+                <img src="figures/thought-bubble.png" style="height:40px;position:absolute;left:360px;top:200px;"/>
+                <div class="kevGray kevIcon"
+                     style="position:absolute;left:255px;top:200px;border-color:#666;border-radius:5px;border-width:2px;border-style:dotted;padding:5px;font-size:10px;">
+                    Node A : 2 modules<br/>
+                    Node B : 2 modules<br/>
+                    Node C : 2 modules
+                </div>
+            </li>
+            <li class="next"><span class="kevOrange icon-comments-alt kevIcon"></span> When will C be updated <span class="kevGray icon-question-sign kevIcon"></span> Acceptable <span class="kevOrange">divergence</span> <span class="kevGray icon-question-sign kevIcon"></span></li>
+        </ul>
+    </div>
+</div></section>
+
+<section class="slide"><div>
+    <h2><span class="kevOrange ion-help-circled"></span> Research questions</h2>
+    <p class="next"><span class="kevOrange icon-zoom-in kevIcon"></span> Our research focus : <span class="kevOrange">reliable software engineering</span></p>
+    <ul>
+        <li class="next"><span class="kevOrange icon-code kevIcon"></span> How to develop <span class="kevOrange">adaptable</span> software systems?</li>
+        <li class="next">How to safely <span class="kevOrange">manage</span> distributed adaptive systems?</li>
+        <li class="next"><span class="kevOrange icon-cogs kevIcon"></span> How to write adaptation strategies?</li>
+        <li class="next">How to deal with <span class="kevOrange">heterogeneous</span> nodes?</li>
+    </ul>
+</div></section>
+        
+
+<section class="slide shout"><div>
+    <h2 style="font-size : 60px">Complex Systems <span class='iconic iphone kevOrange'></span> need <br/>
+        Abstraction <span class="iconFont3 kevOrange">4</span> 
+        <br />
+        <br />
+        Adaptive Systems <span class="iconFont3 kevOrange">i</span> need <br/>
+        Reflection <span class='iconic cog kevOrange'></span>
+        <br />
+        <br />
+        Heterogeneous Systems <span class="iconFont3 kevOrange">v</span> need <br/>
+        Variability Management <span class='iconic bolt kevOrange'></span>
+        <br />
+    </h2>
+</div></section>
+
+        
+<section class="slide"><div>
+    <h2>Heterogeneous dissemination strategy</h2>
+    <div style="padding-top:50px;" class="kevIcon">
+        <div style="padding-left:200px;">
+            <span class="icon-cogs kevGray" style="position:absolute;top:210px;left:485px;"></span>
+
+            <div class=" icon-hdd kevGray" style="font-size:30px;float:left;"></div>
+            <div class=" icon-resize-horizontal kevGray"
+                 style="font-size:30px;float:left;margin-left: 10px;margin-right: 10px;"></div>
+            <div class=" icon-lock kevGray"
+                 style="font-size:30px;float:left;margin-left: 10px;margin-right: 10px;"></div>
+            <div class=" icon-resize-horizontal kevGray"
+                 style="font-size:30px;float:left;margin-left: 10px;margin-right: 10px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;float:left;"></div>
+            <div class=" icon-resize-horizontal kevGray"
+                 style="font-size:30px;float:left;margin-left: 10px;margin-right: 10px;"></div>
+            <div class=" icon-lock kevGray"
+                 style="font-size:30px;float:left;margin-left: 10px;margin-right: 10px;"></div>
+            <div class=" icon-resize-horizontal kevGray"
+                 style="font-size:30px;float:left;margin-left: 10px;margin-right: 10px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;float:left;"></div>
+        </div>
+        <div style="clear:both;"></div>
+
+        <div>
+            <div style="background-color:#DF9D00;width:500px;position:absolute;left:250px;top:190px;height:100px;opacity: 0.3;border-radius:5px;"></div>
+            <div style="position:absolute;top:380px; left:150px;color:#000000;">
+                <p>
+
+                <div class=" icon-lock kevGray" style="font-size:30px;"></div>
+                Known and fix area: Highly consistent reflexion layer</p>
+            </div>
+        </div>
+
+        <div style="padding-top:50px;padding-left:370px;">
+            <div class=" icon-tablet kevGray" style="font-size:30px;float:left;"></div>
+            <div class=" icon-resize-horizontal kevGray"
+                 style="font-size:30px;float:left;margin-left: 15px;margin-right: 15px;"></div>
+            <div class=" icon-tablet kevGray" style="font-size:30px;float:left;"></div>
+            <div class=" icon-resize-horizontal kevGray"
+                 style="font-size:30px;float:left;margin-left: 15px;margin-right: 15px;"></div>
+            <div class=" icon-tablet kevGray" style="font-size:30px;float:left;"></div>
+            <span class="icon-cogs kevGray" style="position:absolute;top:360px;left:485px;"></span>
+            <span class="icon-cogs kevGray" style="position:absolute;top:360px;left:565px;"></span>
+        </div>
+
+        <div>
+            <div style="background-color:#CCC;width:500px;position:absolute;left:250px;top:300px;height:100px;opacity: 0.3;border-radius:5px;"></div>
+            <div style="position:absolute;top:450px; left:140px;color:#000000;">
+                <p>
+
+                <div class=" icon-unlock kevGray" style="font-size:30px;"></div>
+                Unknown and mobile area: weak consistent reflexion layer</p>
+            </div>
+        </div>
+
+        <div>
+            <span class="icon-resize-vertical kevGray" style="position:absolute;top:283px;left:495px;"></span>
+            <span class="icon-resize-vertical kevGray" style="position:absolute;top:283px;left:655px;"></span>
+        </div>
+
+        <div>
+            <div style="position:absolute;top:520px; left:140px;color:#000000;">
+                <p>
+
+                <div class=" icon-lightbulb kevGray" style="font-size:30px;"></div>
+                Imposed diversity depending on the business: <span class="kevOrange"></span>limited
+                battery, ...</p>
+            </div>
+            <span class="icon-time kevGray" style="position:absolute;top:283px;left:665px;"></span>
+            <span class="icon-time kevGray" style="position:absolute;top:283px;left:475px;"></span>
+        </div>
+
+    </div>
+</div></section>
+
+<section class="slide"><div>
+     <h2>Architectural abstraction needed !</h2> 
+    <div style="text-align: center;position:absolute;right:150px; top:160px;">
+        <object data="figures/ModelsRuntime.png" type="image/png" style="height:450px;"></object>
+    </div>
+</div></section>
+  
+<section class="slide shout" id="kevproject_title"><div>
+    <h2><span class="kevOrange">></span>Distributed Models@Runtime</h2>
+</div></section>
+
+<section class="slide"><div>
+    <header>
+        <h2>Model@Runtime (M@R)</h2>
+    </header>
+    <div>
+        <ul>
+            <li class="next">A <span class="kevOrange">model</span> <span class="kevGray">as an abstraction </span> during execution, <span class="kevGray">reflects</span> the system
+                <div style="position:absolute;left:100px;bottom:40px;" class="kevIcon">
+                    <div style="line-height:0px;margin-left: 5px;text-align:center;">
+                        <div class="kevModel"
+                             style="padding:5px;line-height:5px;width:34px;position:absolute;bottom:125px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                        </div>
+                        <img src="figures/thought-bubble-left-down.png"
+                             style="height:40px;position:absolute;left:25px;bottom:85px;"/>
+
+                        <div class=" icon-hdd kevGray" style="font-size:50px;"></div>
+                        <span class="kevGray" style="font-size:18px;">S</span>
+
+                        <div class="kevRuntime" style="width:90px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                        </div>
+                    </div>
+
+                    <span class="kevGray"
+                          style="font-size:15px; position:absolute;left:60px;bottom:150px;">model</span>
+                    <span class="kevGray"
+                          style="font-size:15px; position:absolute;left:60px;bottom:130px;">reflect</span>
+                    <span class="kevGray icon-arrow-down"
+                          style="font-size:15px; position:absolute;left:70px;bottom:110px;"></span>
+
+                </div>
+            </li>
+            <li class="next">Model modification <span class="kevOrange">without effect</span> on platform
+                <div style="position:absolute;left:240px;bottom:40px;height:180px;border-right: 2px dotted #666; " class="kevIcon"></div>
+                <div style="position:absolute;left:300px;bottom:40px;line-height:5px;text-align:center;" class="kevIcon">
+                    <div class="kevModel"
+                         style="padding:5px;line-height:5px;width:34px;position:absolute;bottom:125px;">
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                    </div>
+                    <img src="figures/thought-bubble-left-down.png"
+                         style="height:40px;position:absolute;left:25px;bottom:85px;"/>
+
+                    <div class=" icon-hdd kevGray" style="font-size:50px;"></div>
+                    <span class="kevGray" style="font-size:18px;">S</span>
+
+                    <div class="kevRuntime" style="width:90px;padding:5px;line-height:5px;">
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                    </div>
+                </div>
+
+                <div style="position:absolute;left:345px;bottom:170px;" class="kevIcon">
+                    <span class="icon-cogs kevGray"></span>
+                    <span class="icon-arrow-right kevOrange" style="font-size:20px;"></span>
+                </div>
+
+                <div style="position:absolute;left:400px;bottom:128px;" class="kevIcon">
+                    <div style="line-height:0px;margin-left: 5px;text-align:center;">
+                        <div style="border-color:#DF9D00;border-radius:5px;border-width:2px;border-style:dotted;width:34px;padding:5px;line-height:5px;">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                            <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="next"><span class="kevOrange">On demand</span> *causal link* 
+                <div style="position:absolute;left:500px;bottom:40px;height:180px;border-right: 2px dotted #666; " class="kevIcon"></div>
+                <div style="position:absolute;left:590px;bottom:40px;line-height:5px;text-align:center;" class="kevIcon">
+                    <div class="kevModel"
+                         style="padding:5px;line-height:5px;width:34px;position:absolute;bottom:125px;">
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                    </div>
+                    <img src="figures/thought-bubble-left-down.png"
+                         style="height:40px;position:absolute;left:25px;bottom:85px;"/>
+
+                    <div class=" icon-hdd kevGray" style="font-size:50px;"></div>
+                    <span class="kevGray" style="font-size:18px;">S</span>
+
+                    <div class="kevRuntime" style="width:90px;padding:5px;line-height:5px;">
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                        <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                    </div>
+                </div>
+
+                <div style="position:absolute;left:690px;bottom:125px;">
+                    <div style="line-height:0px;margin-left: 5px;text-align:center;">
+                        <div style="border-color:#DF9D00;border-radius:5px;border-width:2px;border-style:dotted;width:34px;padding:5px;line-height:5px;" class="kevIcon">
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                            <div class=" icon-folder-close-alt kevGray" style="font-size:30px;"></div>
+                            <div class=" icon-folder-close kevOrange" style="font-size:30px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="position:absolute;left:653px;bottom:120px;">
+                    <div class="icon-folder-close kevOrange" style="font-size:30px;"></div>
+                </div>
+                <div style="position:absolute;left:660px;bottom:100px;">
+                    <div class="icon-arrow-down kevOrange" style="font-size:20px;"></div>
+                </div>
+            </li>
+
+            <li class="next">Target model becomes current model after synchronization
+                <div style="position:absolute;right:240px;bottom:40px;height:180px;border-right: 2px dotted #666; " class="kevIcon"></div>
+                <div class="kevModel kevOrange kevIcon"
+                     style="padding:5px;line-height:5px;width:34px;position:absolute;bottom:165px;right:150px;">
+                    <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                    <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                    <div class=" icon-folder-close-alt kevGray" style="font-size:25px;"></div>
+                </div>
+                <img src="figures/thought-bubble-left-down.png"
+                     style="height:40px;position:absolute;right:140px;bottom:125px;"/>
+
+                <div style="position:absolute;right:70px;bottom:40px;" class="kevIcon">
+                    <div style="line-height:0px;margin-left: 10px;text-align:center;">
+                        <span class=" icon-hdd kevOrange" style="font-size:50px;"></span>
+                        <span class="kevOrange" style="font-size:18px;">S'</span>
+
+                        <div style="border-color:#DF9D00;border-radius:5px;border-width:2px;border-style:solid;width:120px;padding:5px;line-height:5px;" class="kevIcon">
+                            <div class=" icon-folder-close-alt kevOrange" style="font-size:25px;"></div>
+                            <div class=" icon-folder-close-alt kevOrange" style="font-size:25px;"></div>
+                            <div class=" icon-folder-close-alt kevOrange" style="font-size:25px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div></section>    
+  
+<section class="slide"><div>
+    <h2>Distributed reflection leveraging models</h2>
+    <div style="height:180px;">
+        <div style="clear:both;" class="kevIcon">
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:100px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+        </div>
+        <div style="clear:both;" class="kevIcon">
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:200px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+        </div>
+        <div style="clear:both;" class="kevIcon">
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:100px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+            <div class=" icon-hdd kevGray" style="font-size:30px;margin-left:150px;"></div>
+        </div>
+    </div>
+    <span class="next"><span class="kevOrange icon-exclamation-sign kevIcon"></span> Each node <div class=" icon-hdd kevGray kevIcon" style="font-size:30px;"></div> has a Model@Runtime layer</span>
+    <ul>
+        <li class="next">Reflexive interaction through models <span class="icon-sitemap kevOrange kevIcon"></span></li>
+        <li class="next">Only local interactions <span class="kevGray">(through models)</span> <span class="kevOrange icon-retweet kevIcon"></span>
+            <div class="kevIcon">
+            <span class="icon-cogs kevGray" style="position:absolute;left:150px;top:270px;"></span>
+            <div style="background-color:#666;width:100px;position:absolute;left:212px;top:260px;height:75px;width:44px;opacity: 0.3;border-radius:5px;"></div>
+            <span class="icon-arrow-left kevOrange" style="position:absolute;left:185px;top:270px;"></span>
+            <span class="icon-sitemap kevOrange" style="position:absolute;left:150px;top:295px;"></span>
+            <span class="icon-arrow-right kevOrange" style="position:absolute;left:185px;top:300px;"></span>
+            </div>
+        </li>
+
+        <li class="next">After modification, <span class="kevOrange">propagation </span> <i class="kevGray">via</i> distribution of the model <span class="icon-random kevOrange kevIcon"></span>
+            <div class="kevIcon">
+            <span class="icon-arrow-right kevOrange" style="position:absolute;left:270px;top:300px;"></span>
+            <span class="icon-sitemap kevOrange" style="position:absolute;left:310px;top:300px;"></span>
+            <span class="icon-arrow-right kevOrange" style="position:absolute;left:350px;top:300px;"></span>
+
+            <span class="icon-arrow-right kevOrange" style="position:absolute;left:450px;top:300px;"></span>
+            <span class="icon-sitemap kevOrange" style="position:absolute;left:500px;top:300px;"></span>
+            <span class="icon-arrow-right kevOrange" style="position:absolute;left:540px;top:300px;"></span>
+
+            <span class="icon-arrow-up kevOrange" style="position:absolute;left:405px;top:225px;"></span>
+            <span class="icon-sitemap kevOrange" style="position:absolute;left:405px;top:250px;"></span>
+            <span class="icon-arrow-up kevOrange" style="position:absolute;left:405px;top:275px;"></span>
+            </div>
+            
+        </li>
+        <li class="next">Delegation : Node responsible of local causal link <span class="icon-lock kevOrange kevIcon"></span>
+
+            <span class="icon-cogs kevGray kevIcon" style="position:absolute;left:620px;top:300px;"></span>
+
+            <div class="kevRuntime kevIcon" style="position:absolute;left:575px;top:330px;line-height:0px;">
+                <span class="icon-folder-close-alt kevGray"></span>
+                <span class="icon-folder-close-alt kevGray"></span>
+            </div>
+            <div style="background-color:#DF9D00;width:500px;position:absolute;left:570px;top:285px;height:80px;width:90px;opacity: 0.3;border-radius:5px;"></div>
+        </li>
+    </ul>
+</div></section>
+   
+
+<section class="slide"><div>
+    <h2>Distributed Model@Runtime</h2>
+    <div style="text-align:center;">
+        <img height="260px" src="figures/dmar.png" />
+    </div>
+    <div>
+        <ul>
+            <li class="next"><span class="kevOrange icon-warning-sign kevIcon"></span> One <span class="kevOrange">global model replica</span>
+                per node,
+                local causal link
+            </li>
+            <li class="next"><span class="kevOrange icon-rss kevIcon"></span> DDAS synchronization <span
+                    class="kevOrange icon-reorder kevIcon"></span>
+                M@R replicas synchronization
+            </li>
+            <li class="next"><span class="kevOrange icon-legal kevIcon"></span> Synchronization policy depends on case study <i class="kevGray">(strong, eventual,...)</i></li>
+        </ul>
+    </div>
+</div></section>
+    
+<section class="slide shout"><div>
+    <h2 style="font-size : 60px">
+        Evolution = <br/>
+        <br/>
+        1 - Fork <span class='iconic fork kevOrange'></span> current <span
+            class='iconic document_alt_fill kevOrange'></span> <br/>
+        <br/>
+        2 - Modify <span class='iconic equalizer kevOrange'></span> to produce <span
+            class='iconic document_fill kevOrange'></span>
+        <br/>
+        <br/>
+        3 - Send <span class='iconic arrow_right kevOrange'></span> to <span class='iconic box kevOrange'></span>
+    </h2>
+</div></section>
+
+<section class="slide"><div>
+<h2><span class="kevIcon kevOrange ion-coffee"></span> <span class="kevOrange">Break:</span> Real world sample and demo</h2>
+    <div style="text-align : center;width:100%;">
+        <img src="figures/reasoner.png" width="800px;" style="border-radius:10px;" />
+    </div>
+</div></section>
+    
+<section class="slide shout"><div>
+    <h2 style="font-size : 60px">
+        On update <span class='iconic document_fill kevOrange'></span> <span
+            class='iconic curved_arrow kevOrange'></span> node
+        <br/>
+        <br/>
+        Compare / current <span class='iconic document_alt_fill kevOrange'></span> produce differences <span
+            class='iconic list_nested kevOrange'></span> <br/>
+        <br/>
+        Interpret on <span class='iconic box kevOrange'></span> if ok set as current <span
+            class='iconic document_fill kevOrange'></span> <br/>
+        <br/>
+        Or <span class='iconic undo kevOrange'></span> rollback
+        <br/>
+    </h2>
+</div></section>
+
+<section class="slide"><div>
+        <h2>Model@Runtime process</h2>
+
+    <object style="position : absolute;top: 150px;left : 150px;" data="figures/modelATruntimeFinal.png" type="image/png"
+            class="middle" height="450"></object>
+</div></section>    
+   
+<section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Kevoree Project</h2>
+</div></section>
+
+    <!-- What is Kevoree ? -->
+<section class="slide">
+    <div>
+        <h2>
+            <span class="kevOrange fa fa-cubes"></span>What Is Kevoree ?</h2>
+        <img src="img/Kev-rond-5cm-Orange.png" style="position:absolute; float:left; right:250px; top:50px; height:200px;" />
+        <ul style="margin-top:100px;">
+            <li><span class="kevOrange kevIcon ion-hammer"></span> <span class="kevOrange">Concrete implementation</span> of Distributed Models@Runtime</li>
+            <li>Environment of
+                <span class="kevOrange">Development </span>and 
+                <span class="kevOrange"> Execution</span>
+            </li>
+            <li>
+                <span class="kevOrange">Component-Based</span> and highly
+                <span class="kevOrange">Distributed</span> Software Systems</li>
+            <li>Leverages
+                <span class="kevOrange">Model Driven Engineering</span>
+                <i class="kevGray">(through KMF)</i>
+            </li>
+            <li><span class="ion-code kevOrange kevIcon"></span><span class="kevOrange"> Framework</span> to build your own Dynamic Distributed System...</li>
+        </ul>
+    </div>
+</section> 
+
+    <!-- Kevoree features -->
+<section class="slide" id="kevproject_overview">
+    <div>
+        <h2>Model@Runtime for DDAS</h2>
+        <ul>
+            <li>
+                <strong class="kevOrange">MDE@Runtime</strong>
+                <ul>
+                    <li>Architecture model shared across distributed nodes</li>
+                    <li>Offline & online operation, compute@Model, apply @Runtime</li>
+                </ul>
+            </li>
+            <li>
+                <strong class="kevOrange">Component-based</strong>
+                <ul>
+                    <li>Communication semantics between components in channels</li>
+
+                    <li>Continuous Design (Hot (re-)deploy & provisioning)</li>
+                </ul>
+            </li>
+            <li>
+                <strong class="kevOrange">Heterogeneity management</strong> with NodeType
+                <div style="text-align: center;position:absolute;left:150px; bottom:0px;">
+                    <object data="figures/plateforms.png" type="image/png" style="height:80px;"></object>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>   
+    
+<section class="slide"><div>
+        <h2>Kevoree overview</h2>
+        <div style="text-align: center;position:absolute;right:100px; top:160px;">
+        <object data="figures/kevoreeOverview.jpg" type="image/png" style="height:420px;"></object>
+    </div>
+</div></section>
+        
+<section class="slide"><div>
+        <h2>What is a software component ?(1/2)</h2>
+        <ul>
+            <li><span class="kevOrange">Independent & Self-Contained</span> piece of Software</li>
+            <li><span class="kevOrange">Conforms</span> to a Component Model</li>
+            <li><span class="kevOrange">Deployment unit</span></li>
+            <li><span class="kevOrange">Functional unit</span></li>
+            <li><span class="kevOrange">Provides / Requires Services</span> (defined by a set of methods)</li>
+            <li><span class="kevOrange">Life-cycle based elements</span></li>
+        </ul>
+        <p><span class="kevOrange icon-wrench"></span><strong class="kevOrange"> Goals : </strong> Abstraction, Seperation of concerns, Reuse</p>
+    </div>
+</div></section>
+ 
+<section class="slide"><div>
+        <h2>What is a component made of?</h2>
+        <object data="figures/ComponentMainFeatures.png" type="image/png" style="height:380px;background:#EBF4FA; border-radius: 30px;"></object>
+</div></section>
+
+
+<section class="slide" id="kevoreeProject"><div>
+    <h2>CBSE and Model@Run.time</h2>
+    <ul>
+        <li class="next">Based on a <span class="kevOrange">*component* model</span> and software industry best practices</li>
+        <li class="next">Framework : Code <span class="kevGray icon-circle-arrow-right kevIcon"></span> Model <span class="kevGray">and</span> Model <span class="kevGray icon-circle-arrow-right kevOrange kevIcon"></span> Code <i class="kevGray">(continuous design)</i>
+            
+            <img src="figures/dsl1.png" style="width:400px;" />
+             
+            <img src="figures/modelview.png" style="border-radius:5px; position:absolute;right:50px;top:320px;width:220px;" />
+            <span class="kevOrange icon-exchange" style="position:absolute;top:360px;right:370px;font-size:50px;"></span>
+        </li>
+        <li class="next">High level *DSL* to write distributed system adaptations
+                        <img src="figures/dsl2.png" style="width:400px;" />
+
+        </li>
+        <li class="next"><span class="kevOrange icon-pushpin"></span> Independence of components development and adaptation</li>
+    </ul>
+</div></section>
+
+
+<section class="slide"><div>
+    <h2>Main concepts</h2>
+    <ul>
+        <li><strong class="kevOrange">Component</strong>
+            <ul>
+                <li>Encapsulates domain features</li>
+            </ul>
+        </li>
+        <li><strong class="kevOrange">Channel</strong>
+            <ul>
+                <li>Encapsulates communication semantics</li>
+            </ul>
+        </li>
+        <li><strong class="kevOrange">Group</strong>
+            <ul>
+                <li>Encapsulates model@runtime dissemination semantics</li>
+            </ul>
+        </li>
+        <li><strong class="kevOrange">Node</strong>
+            <ul>
+                <li>Encapsulates adaptation semantics</li>
+            </ul>
+        </li>
+    </ul>
+    <object style="position:absolute;top: 150px;right: 10px;" data="figures/KevoreeConcepts.png" type="image/png"
+            height="300"></object>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Type/Instance based design</h2>
+    <p class="next">Goal <span class="kevOrange icon-search"></span> fill the gap between design and deploy phases</p>
+    <ul>
+        <li class="next"><span class="kevOrange">TypeDefinition</span>
+            <ul>
+                <li><span class="kevOrange">What</span> are available fonctionalities?</li>
+            </ul>
+            <div class="kevIcon" style="background-color:#CCC;position:absolute;right:100px;top:320px;opacity: 1;border-radius:5px;padding:5px;">
+                HttpServeur
+            </div>
+        </li>
+        <li class="next"><span class="kevOrange">DeployUnit</span>
+            <ul>
+                <li>Dependency graph (technical units)</li>
+            </ul>
+            <div class="kevIcon" style="color:#FFF;font-size:18px;background-color:#666;position:absolute;right:100px;top:240px;opacity: 1;border-radius:5px;padding:5px;">
+                <span class="cog"></span></span> Jar_1
+            </div>
+            <div class="icon-arrow-up kevOrange kevIcon" style="font-size:35px;position:absolute;right:110px;top:285px;"></div>
+            <div class="kevIcon" style="color:#FFF;font-size:18px;background-color:#666;position:absolute;right:180px;top:240px;opacity: 1;border-radius:5px;padding:5px;">
+                <span class="cog"></span></span> Jar_2
+            </div>
+            <div class="icon-arrow-up kevOrange kevIcon" style="font-size:35px;position:absolute;right:190px;top:285px;"></div>
+
+            <div class="kevIcon" style="color:#FFF;font-size:18px;background-color:#666;position:absolute;right:120px;top:150px;opacity: 1;border-radius:5px;padding:5px;">
+                <span class="cog"></span></span> Jar_3
+            </div>
+            <div class="icon-arrow-up kevOrange kevIcon" style="font-size:35px;position:absolute;right:120px;top:200px;"></div>
+        </li>
+        <li class="next"><span class="kevOrange">Instance</span>
+            <ul>
+                <li><span class="kevOrange">Where</span> is a fonctionality in use
+                <div class="kevIcon ">
+
+                     <div class="icon-user kevOrange"
+                         style="font-size:35px;position:absolute;right:160px;top:500px;"></div>
+                    <div class="icon-user kevOrange"
+                         style="font-size:35px;position:absolute;right:130px;top:500px;"></div>
+                    <div class="icon-user kevOrange"
+                         style="font-size:35px;position:absolute;right:190px;top:500px;"></div>
+                    
+                    </div>
+                
+                </li>
+            </ul>
+            <div class="icon-arrow-up kevOrange kevIcon" style="font-size:35px;position:absolute;right:140px;top:400px;"></div>
+            <div class="kevOrange kevIcon"
+                 style="font-size:18px;background-color:#666;position:absolute;right:70px;top:450px;opacity: 1;border-radius:5px;padding:5px;">
+                Server_4 : HttpServeur
+            </div>
+        </li>
+    </ul>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Graphical language</h2>
+    <p class="next"><span class="kevOrange icon-comment"></span> Explicit topology, components, channels,...</p>
+    <img src="figures/kevConcepts.png" style="right:20px;position:absolute;border-radius:5px;width:350px;"/>
+    <ul>
+        <li class="next"><span class="kevOrange">Nodes</span> : execution platform
+            <ul>
+                <li>local adaptation</li>
+            </ul>
+            <span class="icon-hand-right kevOrange kevIcon"
+                  style="position:absolute;right:290px;top:300px;font-size:40px;"></span>
+        </li>
+        <li class="next"><span class="kevOrange">Components</span> : fonctional units
+            <ul>
+                <li>Communications <i>via</i> via ports</li>
+            </ul>
+            <span class="icon-hand-right kevOrange kevIcon"
+                  style="position:absolute;right:280px;top:400px;font-size:40px;"></span>
+        </li>
+        <li class="next"><span class="kevOrange">Channels : communication semantics</span>
+            <ul>
+                <li>encapsule les diffusions complexes (N-N)</li>
+            </ul>
+            <span class="kevOrange icon-hand-up kevIcon"
+                  style="position:absolute;right:295px;top:550px;font-size:40px;"></span>
+        </li>
+    </ul>
+</div></section>
+
+<section class="slide">
+    <div>
+        <h2>NodeType and Node : runtime mapping</h2>
+        <p>
+            <strong class="kevOrange">NodeType used to declare deploy target</strong>
+        </p>
+        <ul>
+            <li>JavaNode</li>
+            <li>AndroidNode</li>
+            <li>DockerCloudNode</li>
+            <li>LXCCloudNode</li>
+            <li>Arduino</li>
+            <li>[...]</li>
+        </ul>
+        <object style="position:absolute;top: 260px;right: 25px;" data="figures/nodeType.png" type="image/png" height="350px"></object>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Component : closed part of a system, has responsibility</h2>
+                <ul>
+                    <li>
+                        <span class="kevOrange">Ports are the borders of components</span>
+                    </li>
+                    <li>
+                        <span>Required and Provided Ports</span>
+                    </li>
+                    <li>
+                        <span class="kevOrange">Close isolation = CA cannot directly call any method of CB</span>
+                    </li>
+                    <li>
+                        <span>Dynamic Parameters</span>
+                    </li>
+                    <li>
+                        <span class="kevOrange">Communications are supported by Channels (C1)</span>
+                    </li>
+                </ul>
+                <object style="position:absolute;top: 280px;right: 50px; background:#EBF4FA; border-radius: 15px;" data="figures/componentType.png" type="image/png" height="150px;"></object>
+    </div>
+</section>
+
+<section class="slide"><div>
+     <h2>Channel Type</h2>
+    	<ul>
+        <li><span class="kevOrange">Extract communication semantics from component</span></li>
+        <li><span class="kevOrange">Explicit complex distribution scenario</span></li>
+        <li><span class="kevOrange">Model communication semantics</span></li>
+         </ul>
+    <object style="position:absolute;top: 350px;right: 120px;" data="figures/Channel.png" type="image/png"
+            height="250"></object>
+</div></section>
+
+<section class="slide"><div>
+        <h2>Instance fragmentation and concurrency</h2>
+    <ul>
+        <li><span class="kevOrange">Component</span>
+            <ul>
+                <li>Actor semantic on each port, channel</li>
+                <li>Instances are isolated in dedicated process</li>
+            </ul>
+        </li>
+        <li><span class="kevOrange">Channel (aka connector)</span>
+            <ul>
+                <li>Fragmented on each linked node</li>
+                <li>Actor semantic on each fragments</li>
+                <li>Local diffusion responsability</li>
+            </ul>
+            <img src="figures/channelFragmentModel.png" style="bottom:50px;right:20px;width:300px;position:absolute;"/>
+        </li>
+    </ul>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Kevoree Tools</h2>
+</div></section>
+
+
+<section class="slide"><div>
+<h2><span class="kevOrange kevIcon ion-code-working"></span> Kevoree ecosystem</h2>
+    <ul>
+        <li>Framework and runtime for Java, JS and C++</li>
+        <li>Tutorial rely on Java version</li>
+        <li>Annotation framework, Editor, IDE and Compilers Plugins...</li>
+        <li><span class="kevOrange">Childs projects:</span>
+            <ul>
+                <li><b class="kevOrange">Kevoree Modeling Framework</b> : http://kevoree.org/kmf</li>
+                <li><b class="kevOrange">Polymer</b> : http://kevoree.org/polymer</li>
+                <li><b class="kevOrange">Kevoree Dynamic ClassLoader</b></li>
+            </ul>
+        </li>
+    </ul>
+</div></section>
+
+<!-- Real life example -->
+    <section class="slide"><div>
+        <h2 style="width:1000px;"><span class="kevOrange fa fa-book"> </span> Kevoree, Model@Run.time and Distribution </h2>
+        <img src="figures/Model.png" style="position:absolute; float:left; right:180px; top:180px; height:400px; border-radius:15px;" />
+    </div></section>
+    
+    <section class="slide"><div>
+        <h2><span class="kevOrange fa fa-cutlery"> </span> Kevoree Tools</h2>
+        <img src="figures/IJ.png" style="position:absolute; float:left; right:80px; top:200px; height:350px;border-radius: 5px;" />
+        <ul>
+            <li>Desktop Model Editor</li>
+            <li>Online Model Editor</li>
+            <li>KevScript</li>
+            <li>Java Annotations API</li>
+            <li>Maven Compiler Plugin</li>
+            <li>Watchdog OS integration</li>
+            <li>IDE Plugin (Eclipse, IntelliJ)</li>
+        </ul>
+    </div></section>
+
+<!-- Annotation presentation -->
+    <section class="slide"><div>
+        <h2 style="width:1000px;"><span class="kevOrange fa fa-book"> </span> Java Code to model with annotations</h2>
+        <p>Complete API documentation at <a href="http://doc.kevoree.org">http://doc.kevoree.org</a></p>
+        <img src="figures/api.png" style="position:absolute; float:left; right:240px; top:250px; height:350px; border-radius:5px;" />
+    </div></section>
+
+<!-- Why asynchronous ports ? -->
+<section class="slide"><div>
+        <h2>Why Kevoree Ports are asynchronous ?</h2>
+        <div style="text-align: center;position:absolute;right:290px; top:180px; ">
+                <object data="figures/badJavaSync.png" type="image/png" style="height:200px;border-radius: 15px;"></object>
+         </div>
+        <div style="text-align: center;position:absolute;right:150px; top:400px; ">
+               <object data="figures/goodapi.png" type="image/png" style="height:200px;border-radius: 15px;"></object>    
+        </div>        
+    </div>
+</div></section>
+
+<!-- Editor -->
+<section class="slide"><div>
+        <h2>Kevoree Editor</h2>
+        <div style="text-align: center;position:absolute;right:150px; top:160px; background:#EBF4FA; border-radius: 15px;">
+        <object data="figures/KevoreeEditor.png" type="image/png" style="height:440px;"></object>
+    </div>
+</div></section>
+
+<section class="slide"><div>
+         <h2>Kevoree Web Editor</h2>
+        <div style="text-align: center;position:absolute;right:150px; top:160px;">
+        <object data="figures/KevoreeWebEditor.png" type="image/png" style="height:450px;border-radius:5px;"></object>
+    </div>
+</div></section>
+
+<!-- KevScript -->
+    <section class="slide"><div>
+        <h2 style="width:1000px;"><span class="kevOrange fa fa-book"> </span> KevScript: DSL for dynamic architecture</h2>
+        <img src="figures/kevscript.png" style="position:absolute; float:left; right:180px; top:180px; height:430px; border-radius:5px;" />
+    </div></section>
+
+<!-- IDE and Plugin -->
+<!-- IntelliJ Plugin -->
+    <section class="slide"><div>
+        <h2 style="width:1000px;"><span class="kevOrange fa fa-book"> </span> IntelliJ developement environement</h2>
+        <img src="figures/intellij.png" style="position:absolute; float:left; right:180px; top:180px; height:430px; border-radius:5px;" />
+    </div></section>
+
+<!-- Eclipse Plugin -->
+    <section class="slide"><div>
+        <h2><span class="kevOrange fa fa-spin fa-cog"> </span> Kevoree Platforms</h2>
+        <img src="figures/Runtime.png" style="position:absolute; float:left; right:10px; top:90px; height:245px;" />
+        <img src="figures/JSRT.png" style="position:absolute; float:left; right:10px; top:350px; height:250px;" />
+        <img src="figures/boot2kevoree.png" style="position:absolute; float:left; right:360px; top:380px; height:220px;" />
+        <ul>
+            <li>JavaNode <i class="kevGray">(root)</i></li>
+            <li>LightLXC (Linux Container)</li>
+            <li>JavaScript (NodeJS, Browser)</li>
+            <li>Docker Kevoree</li>
+            <li>Boot2Kevoree !</li>
+        </ul>
+    </div></section>
+
+<section class="slide"><div>
+    <h2><span class="kevOrange kevIcon ion-pin"></span> Links </h2>
+    
+    <p><strong class="kevOrange">Main</strong> : <a href="http://kevoree.org">http://kevoree.org</a></p>
+    
+    <p><strong class="kevOrange">Source</strong> : <a href="http://git.kevoree.org">http://git.kevoree.org</a></p>
+    
+    <p><strong class="kevOrange">Documentation</strong> <i class="kevGray">(HTML,PDF,EBOOK,PUB)</i> : <a href="http://doc.kevoree.org">http://doc.kevoree.org</a></p>
+    
+    <p><strong class="kevOrange">Tutorial</strong> <i class="kevGray">(HTML,PDF,EBOOK,PUB)</i> : <a href="http://tuto.kevoree.org">http://tuto.kevoree.org</a></p>
+    
+</div></section>
+
+<section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Tutorial</h2>
+</div></section>
+
+
+<section class="slide"><div>
+    <img src="figures/codeEditorScreenshot.png" style="position: absolute; left:290px; top:50px; height:220px;"/>
+    <img src="figures/editorScreenShot.png" style="position: absolute; left:50px; bottom:50px; height:220px;"/>
+    <img src="figures/runtimeScreenshot.png" style="position: absolute; right:50px; bottom:50px; height:220px;"/>
+    <span class="iconic spin_alt kevOrange" style="position: absolute; right:470px; bottom:230px; font-size:80px;"></span>
+</div></section>
+
+<section class="slide"><div>
+        <h2>Environment Setup 1/2</h2>
+    	<ul>
+        <li ><strong class="kevOrange">You need</strong>
+    	<ul>
+        <li >Java Development Kit >= 1.6
+        </li>
+        <li >Maven >= 3.0.4
+        </li>
+        <li >a pre-load Maven repository
+        </li>
+		<li >
+        One Java  IDE (eclipse, intelliJ, netbeans)</li>
+		<li >
+        The latest Kevoree editor</li>
+        <li >
+        The latest Java runtime container</li>
+        
+        </ul>
+                </li>
+        <li ><strong class="kevOrange">We provide everything on an usb stick for (several OS and architectures)</strong>
+        </li>
+                </ul>
+</div></section>
+
+<section class="slide"><div>
+        <h2>Environment Setup 2/2</h2>
+    	<ul>
+        <li ><strong class="kevOrange">You must be able to</strong>
+    	<ul>
+        <li >set the environment variables <BR/> <span class="kevOrange">> source env.sh | env.bat</span>
+        </li>
+        <li >start Kevoree editor <BR/> <span class="kevOrange">> java -jar editor.jar</span>
+        </li>
+        <li >
+        start several Java Kevoree containers  <BR/> <span class="kevOrange">java -jar platform-gui.jar</span></li>        
+        </ul>
+                </li>
+                </ul>
+</div></section>
+
+<section class="slide shout">
+    <div><h2>tuto.kevoree.org</h2></div>
+</section>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="slide shout" id="pratical1">
+    <h2><span class="kevOrange"></span>Let's try it: <BR/> practice 1</h2>
+        <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <object  data="figures/showmethecode.png" type="image/png" style="height:150px;"></object>
+        <div style="left:50px; top:400px;">
+    <h1>A simple distributed chat application</h1>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="slide" id="practise1_1">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>First application</h2>
+        <div style="width: 65%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">Start the editor and a Java container</strong>
+    	<ul>
+        <li >> java -jar editor.jar && java -jar platform-gui.jar</li>
+        </ul>
+
+        </li>
+        <li ><strong class="kevOrange">Load the model of the container</strong>
+    	<ul>
+        <li >File -> Open from node  (localhost:9000)
+        </li>
+        </ul>
+                </li>
+
+        <li ><strong class="kevOrange">Import Java toy and channel library</strong>
+    	<ul>
+        <li >Model -> Load Kevoree Library -> Java -> Channel/Toy
+        </li>
+        </ul>
+                </li>
+
+        <li ><strong class="kevOrange">Create a first model</strong>
+    	<ul>
+        <li >2 <i>ToyConsoles</i> bound through an <i>AsyncBroadCast</i> channel
+        </li>
+        </ul>
+                </li>
+
+                        </ul>
+
+            </div>
+        </div>
+        <div style="width: 35%;height:100%; float:right;">
+            <div style="text-align:center;">
+
+                <object style="height:260px;" data="figures/SimpleChat.png"></object>
+
+     <ul>
+
+                <ul><li>Push the model</li></ul>
+        		</ul>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+
+
+<section class="slide" id="pactise1_2">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>First distributed application</h2>
+        <div style="width: 65%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">Start a second Java container</strong>
+    	<ul>
+        <li >> java -Dnode.name=node1 -Dnode.bootstrap=node1.kevs -jar platform.jar </li>
+        </ul>
+
+        </li>
+        <li ><strong class="kevOrange">Merge the model of the container</strong>
+    	<ul>
+        <li >File -> Merge from node (localhost:9001)
+        </li>
+        </ul>
+                </li>
+
+        <li ><strong class="kevOrange">Import Java toy and HazelCast library</strong>
+    	<ul>
+        <li >Model -> Load Kevoree Library -> Java -> HazelCast/Toy
+        </li>
+        </ul>
+                </li>
+
+        <li ><strong class="kevOrange">Update your first model</strong>
+    	<ul>
+        <li >2 <i>ToyConsoles</i> bound through a <i>DistributedBroadCast</i>
+        </li>
+        </ul>
+                </li>
+
+                        </ul>
+
+            </div>
+        </div>
+        <div style="width: 35%;height:100%; float:right;">
+            <div style="text-align:center;">
+
+                <object style="height:260px;" data="figures/DistributedChat.png"></object>
+                <ul>
+
+                <ul><li>Push the model</li></ul>
+        		</ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide shout" id="pratical2">
+    <h2><span class="kevOrange">></span>Let's try it: <BR/> Practice 2</h2>
+        <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <object  data="figures/showmethecode.png" type="image/png" style="height:150px;"></object>
+
+    </div>
+  <div style="left:50px; top:400px;">
+    <h1>Develop with Kevoree: From Source Code to Deployment</h1>
+
+    </div>
+</section>
+
+
+
+<section class="slide" id="framework1">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>KevoreeFramework, Java Annotation API</h2>
+        <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+    	<ul>
+        <li ><strong class="kevOrange">Plain Old Java Class approach ...</strong>
+        </li>
+        <li ><strong class="kevOrange">Declare Type contract as header of Java Class</strong>
+    	<ul>
+        <li >@ComponentType, @ComponentFragment, @ChannelType, [...]
+        </li>
+        </ul>
+                </li>
+        <li ><strong class="kevOrange">Declare life-cycle method on simple void method</strong>
+    	<ul>
+        <li >@Start, @Stop, @Update (dictionary update)
+        </li>
+        </ul>
+                </li>
+        <li ><strong class="kevOrange">@Library to group Type definition</strong>
+        </li>
+                        </ul>
+
+            </div>
+        </div>
+        <div style="width: 50%;height:100%; float:right;">
+            <div style="text-align:center;">
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+@ComponentType
+@Library(name = "Java - Samples")
+public class HelloProducerComponent implements HelloProductionListener {
+    @Output
+    private org.kevoree.api.Port helloProducedPort;
+
+    @Param(defaultValue = "2000")
+    private int delay = 2000;
+
+    @Start
+    public void startComponent() {...}
+
+    @Stop
+    public void stopComponent() {...}
+
+    @Update
+    public void updateComponent() {...}
+</pre>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="slide" id="framework2">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>KevoreeFramework, Java Annotation API</h2>
+        <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">ComponentType == Java Class</strong>
+        </li>
+        <li ><strong class="kevOrange">@ComponentType or @ComponentFragment</strong>
+    	<ul>
+        <li >@Input & @Output & @Param to declare component type contract
+        </li>
+        </ul>
+                </li>
+                        </ul>
+
+            </div>
+        </div>
+        <div style="width: 50%;height:100%; float:right;">
+            <div style="text-align:center;">
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+@ComponentType
+@Library(name = "Java - Samples")
+public class XXX  {
+
+    @Param(defaultValue = "2000")
+    private int delay = 2000;
+
+    @Input
+    public void consumeHello(Object o) {...}
+
+	//Without callback
+    @Output
+    private org.kevoree.api.Port helloProducedPort;
+
+	public void onHelloProduced(String greetingMessage) {
+    	helloProduced.call(greetingMessage);
+	}
+
+	//With callback
+	@Output
+	private org.kevoree.api.Port userDecision;
+
+	public boolean askUser(String questionMessage) {
+    	userDecision(greetingMessage, new Callback() {
+        	public void run(Object result) {
+            	return (Boolean)result;
+	        }
+    	});
+	}
+</pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="slide" id="framework3">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>KevoreeFramework, Java Annotation API</h2>
+        <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+    	<ul>
+        <li ><strong class="kevOrange">Several services from the Kevoree runtime can be injected into a component</strong>
+        </li>
+        <li ><strong class="kevOrange">@KevoreeInject on a variable typed by the service you need</strong>
+    	<ul>
+        <li >ModelService
+        </li>
+        <li >BootstrapService</li>
+<li >KevScriptService</li>
+<li >Context</li>
+<li >ChannelContext
+        </li>
+        </ul>
+                </li>
+                        </ul>
+
+            </div>
+        </div>
+        <div style="width: 50%;height:100%; float:right;">
+            <div style="text-align:center;">
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+@KevoreeInject
+ChannelContext channelContext;
+</pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide" id="framework4">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>KevoreeFramework, Java Annotation API</h2>
+        <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">ChannelType (@ChannelTypeFragment)</strong>
+    	<ul>
+        <li >Input bindings use dispatch method</li>
+         <li >forward primitive to forward message
+    	<ul>
+        <li >local bindings</li>
+        <li >other fragments</li>
+        </ul>
+        </li>
+        </ul>
+        </li>
+        </ul>
+
+            </div>
+        </div>
+        <div style="width: 50%;height:100%; float:right;">
+            <div style="text-align:center;">
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+@ChannelType
+public class SyncBroadcast implements ChannelDispatch {
+
+    @KevoreeInject
+    ChannelContext channelContext;
+
+    @Override
+    public void dispatch(Object payload, Callback callback) {
+        for (Port p : channelContext.getLocalPorts()) {
+            p.call(payload, callback);
+        }
+    }
+}
+</pre>
+				<div>
+
+                <object style="height:220px;" data="figures/ChannelFragment.png"></object>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide" id="toolchain1">
+    <div>
+        <h2>KevoreeFramework, Tool Chain</h2>
+        <object  data="figures/BuildProcess.png" type="image/png" style="height:400px;"></object>
+	</div>
+</section>
+
+
+<section class="slide" id="toolchain2">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>KevoreeFramework, Tool Chain </h2>
+        <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">Maven - Software Life Cycle Management</strong>
+    	<ul>
+        <li >Describes the project, its dependencies and actions to be realized</li>
+         <li >Goals and Phases
+
+    	<ul>
+        <li >clean, compile, test, install, deploy</li>
+        </ul>
+        <li >Artifacts and Plugins</li>
+        <li >Stored in repositories</li>
+        </ul>
+        </li>
+        </ul>
+
+            </div>
+        </div>
+        <div style="width: 50%;height:100%; float:right;">
+            <div style="text-align:center;">
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+<plugin>
+    <groupId>org.kevoree.tools</groupId>
+    <artifactId>org.kevoree.tools.mavenplugin</artifactId>
+    <version>${kevoree.version}</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <nodename>MyNode</nodename>
+        <model>src/main/kevs/main.kevs</model>
+    </configuration>
+</plugin>
+</pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide" id="toolchain3">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>KevoreeFramework, Tool Chain </h2>
+        <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">Maven - Software Life Cycle Management</strong>
+    	<ul>
+        <li >Specifies the dependencies</li>
+         <li >Plugins to run</li>
+        <li >Sub-Modules</li>
+        <li >Repositories where to find dependencies and plugins</li>
+        </ul>
+        </li>
+        </ul>
+            </div>
+        </div>
+        <div style="width: 50%;height:100%; float:right;">
+            <div style="text-align:center;">
+<pre class="brush:java toolbar:false;">
+<project xmlns="http://...">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>kevoree.sample.producerconsumer</artifactId>
+  <groupId>org.kevoree</groupId>
+  <version>1.0</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.kevoree.tools</groupId>
+        <artifactId>org.kevoree.tools.mavenplugin</artifactId>
+        <version>${kevoree.version}</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+            <nodename>node0</nodename>
+            <model>src/main/kevs/main.kevs</model>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+</pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slide" id="toolchain4">
+    <div>
+        <h2>KevoreeFramework, Tool Chain</h2>
+       <object  data="figures/Maven.png" type="image/png" style="height:400px;"></object>
+    </div>
+</section>
+
+
+
+<section class="slide" id="toolchain5">
+    <div>
+        <h2>KevoreeFramework, Continuous Design</h2>
+        <object  data="figures/ContinuousDesign.png" type="image/png" style="height:400px;"></object>
+    </div>
+</section>
+
+<section class="slide shout" id="toolchain6">
+	<div>    
+	<h2><span class="kevOrange">></span>Your turn</h2>
+    <br/>
+    <br/>
+    <br/>
+        <object  data="figures/yourturn.jpg" type="image/jpg" style="height:150px;"></object>
+            <div style="text-align: center;position:absolute;right:10px; top:500px;">
+<h1>Complete the component provided in the kevoree-sample project, compile it, use it in the editor and deploy it within the platform</h1>
+    </div>
+	</div>
+</section>
+
+
+
+
+<section class="slide shout" id="pratical3">
+    
+	<div><h2><span class="kevOrange">></span>Let's try it: <BR/> Practice 3</h2>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+        <object  data="figures/showmethecode.png" type="image/png" style="height:150px;"></object>
+        <div style="text-align: center;position:absolute;left:280px; top:500px;">
+<h3>Model@Runtime, Runtime Adaptation </h3>
+    </div>
+</div>
+</section>
+
+
+
+<section class="slide" id="pratical3_1">
+	<div>
+        <h2>Kevoree metamodel</h2>
+    <a href="figures/KevoreeMetaModel.png"><img src="figures/KevoreeMetaModel.png" style="border-radius: 10px;height:440px;"/></a>
+	</div>
+</section>
+
+<section class="slide" id="pratical3_2">
+    <div>
+        <h2>Kevoree Modeling Framework</h2>
+    <ul>
+	<li ><strong class="kevOrange">Metamodel</strong>
+	<ul>
+		
+
+    <li >generate lightweight object structure with concise API for manipulating models in Javascript, Kotlin, Java, Scala, C+++</li>
+    <li >generate helpers: XMI/JSON loader, XMI/JSON serializer, cloner, diff operator, merger ...</li>
+	</ul>
+	</li>
+
+    </ul>
+    </div>
+
+</section>
+
+
+<section class="slide" id="pratical3_3">
+	<div>
+        <h2>Manipulating the model</h2>
+    <a href="./figures/KMFmodelsruntime.png"><img src="figures/KMFmodelsruntime.png" style="border-radius: 10px;height:430px;"/></a>
+    </div>
+</section>
+
+
+
+<section class="slide" id="pratical3_4">
+    <div>
+        <h2>M@R: Read the model</h2>
+    <a href="./figures/KMFModelsruntimecode.png"><img src="figures/KMFModelsruntimecode.png" style="border-radius: 10px;height:400px;"/></a>
+                <div style="text-align:center;position:absolute;left:80px; top:150px; width:500px;">
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+int instancesNumber = localModel.
+		getComponentInstanceForJ().size();
+for(ComponentInstance inst :
+	localModel.getComponentInstanceForJ()) {
+    System.out.println(inst.getName()+ ":"
+    + inst.getType.getName);
+}
+
+</pre>
+    </div>
+</section>
+
+
+<section class="slide" id="pratical3_5">
+    <div>
+        <h2>M@R: Adapt the model (the hard way)</h2>
+     <div style="text-align:center;position:absolute;left:190px; top:350px; width:500px;">
+    <a href="./figures/KMFModelsruntimecode2.png"><img src="figures/KMFModelsruntimecode2.png" style="border-radius: 10px;height:250px;"/></a>
+                </div>
+                <div style="text-align:center;position:absolute;left:80px; top:150px; width:500px;">
+
+<pre class="brush:java toolbar:false highlight:[5, 6];">
+@KevoreeInject
+ModelService modelService;
+@KevoreeInject
+Context context;
+@KevoreeInject
+KevScriptService kevScriptService;
+    @Override
+    public void run() {
+        try {
+            Log.info("i'm alone... kill myself...");
+            ModelCloner cloner = new DefaultModelCloner();
+            ContainerRoot clonedModel = cloner.
+		clone(modelService.getCurrentModel().getModel());
+            kevScriptService.execute("remove " + 
+		context.getNodeName() + "." + 
+		context.getInstanceName(), clonedModel);
+            modelService.update(clonedModel, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+</pre>
+    </div>
+
+</section>
+
+
+
+
+
+<section class="slide" id="pratical3_6">
+    <div>
+        <h2>M@R: Adapt the model (the easiest way)</h2>
+    
+<div>
+ <li ><strong class="kevOrange">Create a KevScript:</strong>
+        <ul>
+        <li >add node0.comp2 : ToyConsole
+        </li>
+        <li >Ask the kevScriptService of the platform to execute the script
+        </li>
+        </ul>
+                </li>
+                </ul>
+
+</div>
+     <div style="text-align:center;position:absolute;left:80px; top:330px; width:500px;">
+    <a href="./figures/KMFModelsRuntimekevscript.png"><img src="figures/KMFModelsRuntimekevscript.png" style="border-radius: 10px;height:270px;"/></a>
+                </div>
+    </div>
+
+</section>
+
+<section class="slide" id="pratical3_7">
+    <div>
+        <h2>KevoreeFramework, KevScript</h2>
+    	<ul>
+        <li ><strong class="kevOrange">Scripting language to manipulate models</strong>
+        <ul>
+        <li >Comments -> // this is a comment
+        </li>
+
+        <li >Namespace -> namespace space42 <BR/> attach node0, node1 space42
+        </li>
+        <li >Repository -> repo org.sonatype.org/foo/bar?a=b&c=d
+        </li>
+        <li >Include -> include mvn:org.kevoree.library.java:org.kevoree.library.java.javaNode:3.0.0
+        </li>
+        <li >add -> add node0, node1 : JavaNode <BR/> add node0.comp0 : ToyConsole
+        </li>
+
+
+
+        </ul>
+                </li>
+                </ul>
+                    </div>
+    </div>
+
+</section>
+
+
+<section class="slide" id="pratical3_8">
+    <div>
+        <h2>KevoreeFramework, KevScript</h2>
+    	<ul>
+        <li ><strong class="kevOrange">Scripting language to manipulate models</strong>
+        <ul>
+        <li >remove -> remove node0 <BR/> remove node0.comp0
+        </li>
+        <li >move -> move node0.comp0 node1
+        </li>
+        <li >set -> set node0.comp0.foo = "bar"
+        </li>
+        <li >bind/unbind -> (un)bind node0.base.output chan0
+        </li>
+        <li >(de)attach -> (de)attach node0 sync
+        </li>
+        <li >network -> network node0 192.168.0.1
+
+        </li>
+
+
+
+        </ul>
+                </li>
+                </ul>
+                    </div>
+    </div>
+
+</section>
+
+
+<section class="slide shout" id="pratical3_9">
+	<div>
+    <h2><span class="kevOrange">></span>Your turn</h2>
+        <br/>
+    <br/>
+    <br/>
+        <object  data="figures/yourturn.jpg" type="image/jpg" style="height:150px;"></object>
+            <div style="text-align: center;position:absolute;right:50px; bottom:100px;">
+<h3>Create a <i>green</i> component that removes itself if it does not receive any input message</h3>
+    </div>
+
+</section>
+
+
+
+
+<section class="slide shout" id="praticalC">
+	<div>
+    <h2><span class="kevOrange">></span>Let's try it:<BR/> Practice 4</h2>
+        <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+        <object  data="figures/showmethecode.png" type="image/png" style="height:150px;"></object>
+            <div style="text-align: center;position:absolute;left:290px; top:500px;">
+<h3>Kevoree for cloud management<span class="iconic cloud kevOrange"></span></h3>
+    </div>
+	</div>
+
+</section>
+
+<section class="slide" id="kevcloud_intro">
+<div>
+        <h2>Managing cloud level with Kevoree node</h2>
+    <ul>
+        <li>Kevoree node is a container of components but also of nodes !</li>
+        <li>A parent node is responsible for child's nodes life cycle (start/stop)</li>
+        <li>NodeType refines adaptation strategies
+        <li>See the Cloud as a hierarchy<br/>
+            IaaSNode -> PaaSNode -> SaaSNode
+        </li>
+    </ul>
+</div>
+</section>
+
+<section class="slide" id="kevcloud_nodeType">
+<div>
+        <h2>IaaS and PaaS nodes</h2>
+    <div>
+        <ul>
+            <li >Add/Remove node capability</li>
+            <li >Available NodeType
+                <ul>
+                    <li >MiniCloud : (Add/Remove Java Virtual Machine)</li>
+                    <li >FreeBSD Jails: (Add/Remove VM in the same kernel space)</li>
+                    <li >SmartOS Zone: (same as Jail)</li>
+                    <li >KVM: Hypervisor management</li>
+                    <li >Amazon EC2: Add/Remove EC2 Virtual Machine</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</section>
+
+<section class="slide" id="kevcloud_kevsADcloudml">
+  <div>
+      <h2>KevScript as a cloud modeling language</h2>
+    <div>
+        <ul>
+            <li >KevoreeScript abstracts model manipulation</li>
+            <li >IaaS adaptation</li>
+			            <pre class="brush: kevscript toolbar:false;">
+//add IaaSPlatform 
+addNode iaasKVM21 : KVMNode {ip="10.0.1.5"}
+//add two user node
+addNode userNode1 : JavaNode
+addNode userNode2 : UbuntuNode {version="12.04"}
+//attach to IaaSNode42
+addChild userNode1,userNode2@iaasKVM21
+			  			</pre>
+            <li >PaaS adaptation</li>
+			            <pre class="brush: kevscript linenumber:false toolbar:false;">
+addNode worker2@IaaSNode44 : JavaNode {cpufreq="800mhz",arch="32bits",ram="2gb"}
+addNode worker3@IaaSNode44 : JavaNode {cpufreq="800mhz",arch="32bits",ram="2gb"}
+moveComponent *@worker1 => worker2
+removeNode worker1@IaaSNode42
+			  			</pre>
+        </ul>
+    </div>
+</div>
+</section>
+
+<section class="slide" id="kevcloud_minicloud">
+    <div>
+        <h2>MiniKloud Model@Runtime driven platform (@Rennes - Brittany)</h2>
+    <div style="text-align: center;">
+        <img src="figures/kloud_init.png" style="width:600px;">
+    </div>
+    </div>
+</section>
+
+<section class="slide shout" id="kevcloud_minicloudyourturn">
+<div>
+    <h2><span class="kevOrange">></span>Your turn</h2>
+        <br/>
+    <br/>
+    <br/>
+        <object  data="figures/yourturn.jpg" type="image/jpg" style="height:150px;"></object>
+<h3>Create a component that dynamically reallocates WebServers within a cloud</h3>
+            <div style="text-align: center;position:absolute;right:10px; top:10px;">
+    </div>
+</div>
+
+</section>
+
+<section class="slide shout" id="praticalD">
+	<div>
+    <h2><span class="kevOrange">></span>Let's try it:<BR/> Practice 5</h2>
+        <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+        <object  data="figures/showmethecode.png" type="image/png" style="height:150px;"></object>
+            <div style="text-align: center;position:absolute;left:290px; top:500px;">
+<h3>Kevoree in the small <span class="iconic cloud kevOrange"></span></h3>
+
+    </div>
+	</div>
+
+</section>
+
+<section class="slide" id="kevsmall_device_diversity">
+    <div><h2>Devices diversity</h2>
+    <ul>
+        <li >New mobility usages boost low consumption computer development</li>
+        <li >FPGA, Softproc (VHDL)
+            <img src="figures/FPGA_cell_example.png" style="position: absolute;right:200px;height:100px;top:240px;"/>
+        </li>
+        <li ><span class="kevOrange">Micro-controller</span> (uC, C code)
+            <img src="figures/atmel-atmega328p-with-arduino-bootloader.jpg"
+                 style="position: absolute;right:420px;height:80px;top:280px;"/>
+        </li>
+        <li >System on chip (SoC)<br/>
+            (Raspberry project, Java, Python, Javascript)
+            <img src="figures/RasperryPi.jpg"
+                 style="position: absolute;right:190px;height:150px;top:350px;border-radius: 10px;"/>
+        </li>
+        <li >Smartphones (android, Java)
+            <img src="figures/chrome-android.png"
+                 style="position: absolute;right:10px;height:150px;top:480px;border-radius: 10px;"/>
+        </li>
+        <li >Low consumption Cloud VM based on ARM</li>
+    </ul>
+</div>
+</section>
+
+<section class="slide" id="kevsmall_uc_challenges">
+    <div><h2>Challenges of adaptation on &mu;C</h2>
+    <img src="figures/atmel-atmega328p-with-arduino-bootloader.jpg"
+         style="position: absolute;right:100px;height:100px;top:280px;"/>
+    <span class="kevOrange">&mu;C nodes not powerful enough to support all adaptation strategies!</span><br/>
+    Dynamic adaptation on &mu;C faces several challenges
+    <ul>
+        <li>For comfort and critical uses, downtime must be minimal</li>
+        <li>Volatile memory usage must fit in few kB</li>
+        <li>Persistent memory writes are limited</li>
+        <li>Reconfiguration must be statefull, to recover from power failure</li>
+    </ul>
+    <span class="kevOrange">
+        <span class="iconic arrow_right_alt1"></span> use more powerful sibling to pre-compile adaptations<br/>
+    </span>
+</div>
+</section>
+
+<section class="slide">
+    <div><h2>&mu;Kev Component model</h2>
+    <ul>
+        <li >Type definition/instance <code>(what/where)</code></li>
+        <li >Component with ports (in/out) and parameters</li>
+        <li >Communication channels between ports <code>(bindings)</code></li>
+        <li >
+            Write code (C/Processing/Java) =>
+            Instantiate in a model
+</li>
+<pre class="brush:java toolbar:false;">
+@ComponentType
+public class TempSensor
+    extends AbstractPeriodicArduinoComponent {
+    //behavior code
+    @Param
+    int pin;
+    
+    @output 
+    Temp temp;
+}
+</pre>
+            <span class="iconic cog kevOrange" style="position: absolute; right : 450px; top : 490px;"></span>
+            <span class="iconic move_horizontal_alt2 kevOrange"
+                  style="position: absolute; right : 400px; top : 460px;"></span>
+            <img src="figures/genModel.png"
+                 style="position: absolute; right : 100px; top : 390px; border-radius: 10px;"/>
+        <li >Generate firmware for types + KevScript for instances</li>
+    </ul>
+</div>
+</section>
+
+<section class="slide" id="kevsmall_behind_scene">
+    <div><h2>Behind the scene</h2>
+    <img  src="figures/ctFig.png" style="position: absolute; width: 400px; right : 50px; top:280px;"/>
+    <ul>
+        <li >Asynchronous message passing
+            <span class="iconic kevOrange mail" style="position: absolute; top:370px; right: 460px;"></span>
+            <span class="iconic kevOrange mail" style="position: absolute; top:325px; right: 15px;"></span>
+        </li>
+        <li >FIFO on front of each ports (Actor semantics)
+            <span class="iconic kevOrange layers" style="position: absolute; top:300px; right: 65px;"></span>
+            <span class="iconic kevOrange layers" style="position: absolute; top:345px; right: 65px;"></span>
+            <span class="iconic kevOrange layers" style="position: absolute; top:300px; right: 410px;"></span>
+            <span class="iconic kevOrange layers" style="position: absolute; top:345px; right: 410px;"></span>
+        </li>
+        <li >No OS == no multi-threading</li>
+        <li >Opportunistic scheduler driven by
+            <ul>
+                <li>FIFO pending message number</li>
+                <li>Periodic execution subscriptions</li>
+            </ul>
+            <span class="kevOrange iconraph"
+                  style="position: absolute; top:220px; right: 220px; font-size: 80px;">0</span>
+        </li>
+        <li >Transactional <code>KevScript</code> interpreter</li>
+        <li >Generated flat reflexive layer for dynamic instantiations</li>
+        <li >Token ring dynamic memory allocation</li>
+    </ul>
+</div>
+</section>
+
+
+
+<!--
+<section class="slide" id="partner_incharge">
+    <header><h2>Main activity in the project/Expectations</h2></header>
+    <ul>
+        <li >Improve heterogeneity support for Cloud, gateway and IoT</li>
+        <li >Improve the design of IoT components</li>
+        <li >Provide test-bed environement for LSHDD Systems</li>
+        <li >Link with the Diversify/DAUM/InfraJVM projects</li>
+    </ul>
+
+</section>
+
+<section class="slide" id="partner_expectations">
+    <header><h2>Exploitation/Risks</h2></header>
+    <ul>
+        <li >Research results and open-source pieces of software</li>
+        <li >Through collaborative projects</li>
+        <li >When? N/A</li>
+        <li >How critical it is for your business?: N/A</li>
+        <li >What if the project fails?: N/A</li>
+        <li class="next"> Is that a big issue for you?</li>
+<li class="next"> Can you foresee why it may happen?</li>
+<li class="next"> How can we make sure that it does not happen?</li>
+    </ul>
+
+</section>
+
+-->
+        
+        
+        
+	
+	<!--
+	  
+		   
+   <section class="slide" id="Overview"><div>
+        <h2>Talk overview</h2>
+        <ul>
+            <li><span class="kevOrange"><span class="fa fa-user kevOrange kevIcon"></span> Some words</span> about me</li>
+            <li><span class="kevOrange"><span class="ion-clock kevOrange kevIcon"></span> Time relative</span> modeling for large reasoning context</li>
+            <li><span class="kevOrange"><span class="ion-social-buffer kevOrange kevIcon"></span> Hyper-Heuristics</span> for MOEA@Runtime</li>
+            <li><span class="kevOrange"><span class="ion-ionic kevOrange kevIcon"></span> Kevoree</span> News</li>
+            <li><span class="kevOrange"><span class="ion-forward kevOrange kevIcon"></span> On going</span> Projects and Publications</li>
+        </ul>
+    </div></section>
+        
+    <section class="slide"><div>
+        <h2><span class="fa fa-user kevOrange"></span> Some words about me</h2>
+		<ul>
+			<li><span class="kevOrange kevIcon ion-code-working"></span> <span class="kevOrange">Before 2009</span>: Industrial background <i class="kevGray">(small to large developpements)</i></li>
+            <li><span class="kevOrange kevIcon ion-ios7-compose"></span> <span class="kevOrange">PhD</span> <span class="kevGray">@Triskell Team</span> on Adaptive and Distributed Systems</li>
+            <li><span class="kevOrange kevIcon ion-pin"></span> <span class="kevOrange">Initiator and main developper</span> of Kevoree Model@Runtime ecosystem</li>
+            <li><span class="kevOrange kevIcon ion-stats-bars"></span> <span class="kevOrange">Skills</span>: Modeling, Middleware, Distribued Systems, Genetic Algorithms</li>
+            <li><span class="kevOrange kevIcon ion-hammer"></span> <span class="kevOrange">Like</span> concrete and sustainable  research</li>		
+            <li><span class="kevOrange kevIcon ion-earth"></span> <span class="kevOrange">Since 2013</span>: mimic nature behaviors for <span class="kevOrange">M@R reasoning</span></li>		
+        </ul>
+        <p class="note">Apply my research on CREOS and POST partnerships</p>
+    </div></section>
+
+<section class="slide"><div>
+		<h2><span class="kevOrange ion-beaker"></span> Bio-inspired approches in progress...</h2>
+		<ul>
+			<li><span class="kevOrange">Pandemic</span> system synchronization <i class="kevGray">(Kevoree/Thesis)</i></li>
+			<li><span class="kevOrange">Artifical mutation</span> for problem solving <i class="kevGray">(Polymer)</i></li>
+			<li><span class="kevOrange">Generational crossover</span> hyper-heuristic <i class="kevGray">(Polymer)</i></li>
+			<li><span class="kevOrange">Diversity</span> for resiliance <i class="kevGray">(Polymer - w Brittany)</i></li>
+			<li><span class="kevOrange">Scary man</span> escape security <i class="kevGray">(Kevoree/Cloud)</i></li>
+			<li><span class="kevOrange">Self-healing</span> polymer <i class="kevGray">(Kevoree SmartHome/Grid/Cloud)</i></li>
+			<li><span class="kevOrange">Time relativity</span> in model navigation <i class="kevGray">(KMF/SmartGrid)</i></li>
+		</ul>
+        <img src="pictures/showmethecode.png" style="position:absolute;right:20px;top:220px;width:275px;" />
+	</div></section>
+        
+    <section class="slide"><div>
+        <h2><span class="ion-ionic kevOrange"></span> Kevoree Project in 1 slide</h2>
+        <img src="pictures/DMAR.png" style="width:100%" />
+        <p class="note"><span class="kevOrange ion-alert-circled"></span> If you get lost, close eyes for some secondes ...</p>
+    </div></section>
+        
+    <section class="slide"><div>
+        <h2><span class="ion-map kevOrange"></span> So what ? How to generate M@R ?</h2>
+        <p><span class="ion-pin kevOrange"></span> Model modifications are <span class="kevOrange">reactions</span> ? How to ? Like a sticky polymer...</p>
+        <div style="text-align:center;">
+                <img src="pictures/img25.jpg" style="border-radius:10px;" />
+        </div>
+    </div></section>
+        
+    <section class="slide"><div>
+        <h2><span class="ion-clock kevOrange"></span> Timed history modeling</h2>
+        <div>
+            <ul>
+                <li><b class="kevOrange">KMF</b> foundation work with <span class="kevOrange">Thomas</span></li>
+                <li><span class="kevOrange kevIcon ion-android-storage"></span> From model snapshots to timed elements</li>
+                <li>Models allow navigation accross elements</li>
+                <li><span class="kevOrange kevIcon ion-ios7-navigate"></span> We link as well <span class="kevOrange">versions</span> of elements!</li>
+                <li>Enabling <span class="kevOrange">virtual timed context models</span></li>
+                <li><span class="kevIcon kevOrange ion-social-buffer"></span> <span class="kevOrange">BigData for Models</span></li>
+            </ul>
+        </div>
+        <img src="pictures/flatTime.png" style="position:absolute;right:20px;top:80px;width:380px;" />
+        <img src="pictures/continuumTime.png" style="position:absolute;right:20px;top:360px;width:380px;" />
+    </div></section>         
+    <section class="slide"><div>
+        <h2><span class="ion-clock kevOrange"></span> CREOS SmartGrid application</h2>
+        <ul>
+            <li><span class="kevOrange">Reactive security</span> for SmartGrid <span class="ion-navicon-round kevOrange kevIcon"></span> reactions on meters, from the grid</li>
+            <li><span class="kevGray">For instance</span>: <i>reduce the max acceptance level of meters</i></li>
+            <li><span class="kevOrange kevIcon ion-looping"></span> To emit reactions, we need neighboors informations and past history</li>
+            <li>We apply this modeling techniques to <span class="kevOrange">explore context in SmartHubs</span></li>
+        </ul>
+        <span class="kevOrange ion-flag"></span> Preliminary result on fake reasoning engine, 1 Million SmartMeters:
+        <div style="text-align:center;">
+            <img src="pictures/TimeResult.png" style="width:70%;" />
+        </div>
+    </div></section>
+        
+        
+    <section class="slide"><div>
+        <h2><span class="ion-social-buffer kevOrange"></span> Reason about actions</h2>
+            <ul>
+                <li><span class="kevOrange">Polymer</span> foundation work with <span class="kevOrange">Donia</span></li>
+                <li><span class="kevOrange">Try to solve</span> M@R multi-objectives</li>
+                <li><span class="kevOrange kevIcon ion-chatbox-working"> Evolutionary algorithms</span></li>
+                <li>Hyper-heuristics to fit runtime executions</li>
+                <li><span class="kevOrange kevIcon ion-speedometer"></span> Tracking sucessfull mutations on objectives</li>
+                <li>Learn and reproduce it, when objectives issues</li>
+                <li><span class="kevOrange ion-code-download kevIcon"> Artifical mutation</span> concept for MOEA</li>
+            </ul>
+        <img src="pictures/sputnik.png" style="position:absolute;right:20px;top:140px;width:370px;" />
+    </div></section> 
+        
+        
+    <section class="slide"><div>
+        <h2><span class="ion-disc kevOrange"></span> Pimp my MODELS</h2>
+            <ul>
+                <li><span class="kevOrange">Polymer</span> is a transverval framework</li>
+                <li><span class="kevOrange kevIcon ion-battery-charging"></span> Sputnik hyper-heuristics and batteries included !</li>
+                <li>Application on <span class="kevOrange">CREOS</span> reasoning engine <i class="kevGray">(greedy/fullsearch)</i></li>
+                <li><span class="kevOrange kevIcon ion-cloud"></span> Application on <span class="kevOrange">CLOUD</span> computing elasticity <i class="kevGray">(genetic)</i></li>
+                <li>Application on <span class="kevOrange">POST SmartHome</span> reasoning engine <i class="kevGray">(greedy/genetic)</i></li>
+            </ul>
+        <p class="note">Open source and public now ! http://kevoree.org/polymer</p>
+    </div></section>         
+        
+        	<section class="slide cover" id="KevoreeNews"><div>
+		<h2>Kevoree News</h2>
+		<img src="pictures/Kev-Bg-place-inside-1024-640.png" alt="">
+		<style>
+			#KevoreeNews h2 {
+				color:#FFF;
+				font-size:35px;
+				}
+		</style>
+	</div></section>       
+	   
+    <section class="slide"><div>
+        <h2><span class="fa fa-users kevOrange"></span> Some News of the community...</h2>
+		<ul>
+			<li><span class="kevOrange">Kevoree V3 out !</span> <i class="kevGray">(presented @Middleware conference)</i></li>
+			<li>IntelliJ based Kevoree plugin out ! <i class="kevGray">(for Java tutorials or lessons)</i></li>
+			<li>ReaCloud Startup created in Brittany <i class="kevGray">(2 employees)</i></li>
+			<li><span class="kevOrange">Kevoree Modeling Framework</span> now can meet BigData requirements, BigModel, JS cross-compilation <i class="kevGray">(to be published @MODELS'14)</i></li>
+			<li><span class="kevOrange">Polymer Genetic framework</span> is now public</li>
+			<li>JavaScript Runtime in beta, C++ initiated for MicroControllers</li>
+		</ul>
+    </div></section> 
+	
+    <section class="slide" id="MicroCloud"><div>
+        <h2><span class="kevOrange ion-cloud"></span> Autonomous MicroCloud infrastructure</h2>
+		<ul>
+			<li>Join work with INRIA and SINTEF</li>
+			<li><span class="kevOrange">GOALS</span>: portable, low power, cloud like, autonomous infrastructure</li>
+			<li>Demonstration and power-aware elasticity developpements</li>
+			<li>Based on small <span class="kevOrange">ARM computers</span> (CubieTruck, CubieBoard, BeagleBone)</li>
+            <li>Small WindMill and Solar panels</li>
+            <li>Micro to full sandbox for processes isolation</li>
+		</ul>
+        <img src="pictures/kluster.jpeg" style="position:absolute;right:50px;width:30%;bottom:20px;border-radius:10px;" />
+    </div></section>   
+ 
+	<section class="slide shout" id="ProjectsCover"><div>
+		<h2><span class="kevOrange ion-document-text"></span> Projects and Publications</h2>
+	</div></section>  
+ 
+    <section class="slide" id="Projects"><div>
+         <h2><span class="fa fa-rocket kevOrange"></span> Projects</h2>
+ 		<ul>
+ 			<li><span class="kevOrange">AFR PhD T. Hartmann</span>: Reactive Security for SmartGrid <span class="kevGray">(accepted)</span></li>
+ 			<li><span class="kevOrange">SMARTIES H2020 Europen Project</span>: Elastic sensor infrastructures. <br /><span class="kevGray"><i>SNT (Luxembourg), SINTEF (Norway), I3S (France)</i></span></li>
+ 			<li><span class="kevOrange">AMBER FNR-ANR</span>: Disversity Aware Cloud infrastructures<br /><span class="kevGray"><i>SNT(Luxembourg), INRIA(France)</i></span></li>
+ 			<li><span class="kevOrange">Partnership POST'14</span>: SmartHome gateway and sensors for Luxembourg</li>
+ 			<li><span class="kevOrange">BIHOS Core Proposal</span>: resubmission of join project with POST</li>
+ 			<li><span class="kevOrange">Blurring Aware Platform</span>: Assaad PhD</li>
+ 		</ul>
+     </div></section> 
+ 
+  
+      
+        -->
+    
+<section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Kevoree wrap up </h2>
+</div></section>
+
+
+<!-- Last slide, last chance -->
+
+<section class="slide"><div>
+    <h2>Kevoree in a nutshell, if you got lost...<span class="kevOrange iconraph">R</span></h2>
+    <ul>
+        <li>Kevoree <span class="iconic move_horizontal_alt2 kevOrange kevIcon"></span> Abstraction model for architectural diversity<span class="kevOrange iconraph">Ü</span></li>
+        <li>Model@Runtime eases the management of distributed systems <span class="kevOrange iconraph">P</span></li>
+        <li>Homogeneous adaptation for heterogeneous CPS devices</li>
+        <li>Large scale adaptation dissemination (Gossip, Paxos, etc.)</li>
+        <li>Ready for cloud and elasticity algorithms development <span class="kevOrange iconraph">k</span></li>
+        <li>Open source <span class="iconraph kevOrange">U</span></li>
+        <li>Still lost, <span class="kevOrange iconraph">>=M</span> <a href="http://www.kevoree.org">www.kevoree.org</a></li>
+    </ul>
+</div></section>
+
+
+
+
+
+    <section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Research topics</h2>
+    </div></section>  
+
+    <!-- So what...-->
+    <section class="slide"><div>
+        <h2><span class="ion-map kevOrange"></span> So what ? How to generate M@R ?</h2>
+        <p><span class="ion-pin kevOrange"></span> Model modifications are <span class="kevOrange">reactions</span> ? How to ? Like a sticky polymer...</p>
+        <div style="text-align:center;">
+                <img src="pictures/img25.jpg" style="border-radius:10px;" />
+        </div>
+    </div></section>
+        
+
+    <section class="slide"><div>
+        <h2 style="margin-bottom:0px;"><span class="kevOrange fa fa-puzzle-piece"></span> Kevoree Modeling Framework - KMF</h2>
+        <i class="kevGray"> http://kevoree.org/kmf/</i>
+        <img src="pictures/kevoree/evalA3_1.png" style="position:absolute;bottom:200px;height:180px;margin-left:-280px;" />
+        <img src="pictures/kevoree/evalB3.png" style="position:absolute;bottom:20px;height:180px;margin-left:-280px;" />
+        <ul>
+            <li>Efficiency</li>
+        </ul>
+    </div></section>
+    
+    <section class="slide"><div>
+        <h2 style="margin-bottom:0px;"><span class="kevOrange fa fa-puzzle-piece"></span> Kevoree Modeling Framework - KMF</h2>
+        <i class="kevGray"> http://kevoree.org/kmf/</i>
+        <img src="pictures/kevoree/partialClone2.png" style="position:absolute;bottom:40px;height:260px;margin-left:-280px;" />
+        <img src="pictures/kevoree/partialClonerExperiment.png" style="position:absolute;bottom:40px;height:260px;right:80px;" />
+        <ul>
+            <li>Efficiency</li>
+            <li>Lazy Cloning</li>
+        </ul>
+    </div></section>
+
+    
+
+
+
+    <!-- Time relative naviguation...-->
+    <section class="slide"><div>
+        <h2><span class="ion-clock kevOrange"></span> Timed history modeling</h2>
+        <div>
+            <ul>
+                <li><b class="kevOrange">KMF</b> foundation</li>
+                <li><span class="kevOrange kevIcon ion-android-storage"></span> From model snapshots to timed elements</li>
+                <li>Models allow navigation accross elements</li>
+                <li><span class="kevOrange kevIcon ion-ios7-navigate"></span> We link as well <span class="kevOrange">versions</span> of elements!</li>
+                <li>Enabling <span class="kevOrange">virtual timed context models</span></li>
+                <li><span class="kevIcon kevOrange ion-social-buffer"></span> <span class="kevOrange">BigData for Models</span></li>
+            </ul>
+        </div>
+        <img src="pictures/flatTime.png" style="position:absolute;right:20px;top:80px;width:380px;" />
+        <img src="pictures/continuumTime.png" style="position:absolute;right:20px;top:360px;width:380px;" />
+    </div></section>   
+
+    <section class="slide"><div>
+        <h2 style="margin-bottom:0px;"><span class="kevOrange fa fa-puzzle-piece"></span> Kevoree Modeling Framework - KMF</h2>
+        <i class="kevGray"> http://kevoree.org/kmf/</i>
+        <img src="pictures/kevoree/SampledContext.png" style="position:absolute;bottom:250px;right:100px;height:220px;" />
+        <img src="pictures/kevoree/TimeDistortedContext.png" style="position:absolute;bottom:30px;right:100px;height:220px;" />
+        <ul>
+            <li>Efficiency</li>
+            <li>Lazy Cloning</li>
+            <li>Events</li>
+            <li>No Dependencies</li>
+            <li>Persistency</li>
+            <li>Native Mechanisms Time-related data</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2><span class="ion-clock kevOrange"></span> CREOS SmartGrid application</h2>
+        <ul>
+            <li><span class="kevOrange">Reactive security</span> for SmartGrid <span class="ion-navicon-round kevOrange kevIcon"></span> reactions on meters, from the grid</li>
+            <li><span class="kevGray">For instance</span>: <i>reduce the max acceptance level of meters</i></li>
+            <li><span class="kevOrange kevIcon"></span> To emit reactions, we need neighboors informations and past history</li>
+            <li>We apply this modeling techniques to <span class="kevOrange">explore context in SmartHubs</span></li>
+        </ul>
+        <span class="kevOrange ion-flag"></span> Preliminary result on fake reasoning engine, 1 Million SmartMeters:
+        <div style="text-align:center;">
+            <img src="pictures/TimeResult.png" style="width:70%;" />
+        </div>
+    </div></section>
+          
+    <!-- Hyper-heuristics -->
+    <section class="slide"><div>
+        <h2><span class="ion-social-buffer kevOrange"></span> Reason about actions</h2>
+            <ul>
+                <li><span class="kevOrange">Polymer</span> foundation</li>
+                <li><span class="kevOrange">Try to solve</span> M@R multi-objectives</li>
+                <li><span class="kevOrange kevIcon ion-chatbox-working"> Evolutionary algorithms</span></li>
+                <li>Hyper-heuristics to fit runtime executions</li>
+                <li><span class="kevOrange kevIcon ion-speedometer"></span> Tracking sucessfull mutations on objectives</li>
+                <li>Learn and reproduce it, when objectives issues</li>
+                <li><span class="kevOrange ion-code-download kevIcon"> Artifical mutation</span> concept for MOEA</li>
+            </ul>
+        <img src="pictures/sputnik.png" style="position:absolute;right:20px;top:140px;width:370px;" />
+    </div></section> 
+
+        
+    <!-- Hyper-heuristics application-->
+    <section class="slide"><div>
+        <h2><span class="ion-disc kevOrange"></span> Pimp my MODELS</h2>
+            <ul>
+                <li><span class="kevOrange">Polymer</span> is a transverval framework</li>
+                <li><span class="kevOrange kevIcon ion-battery-charging"></span> Sputnik hyper-heuristics and batteries included !</li>
+                <li>Application on <span class="kevOrange">CREOS</span> reasoning engine <i class="kevGray">(greedy/fullsearch)</i></li>
+                <li><span class="kevOrange kevIcon ion-cloud"></span> Application on <span class="kevOrange">CLOUD</span> computing elasticity <i class="kevGray">(genetic)</i></li>
+                <li>Application on <span class="kevOrange">POST SmartHome</span> reasoning engine <i class="kevGray">(greedy/genetic)</i></li>
+            </ul>
+        <p class="note">Open source and public now ! http://kevoree.org/polymer</p>
+    </div></section> 
+
+    <section class="slide"><div>
+        <h2><span class="ion-disc kevOrange"></span> Polymer</h2>
+
+<pre class="brush: java toolbar:false;">
+engine = new GeneticEngine&lt;Cloud&gt;(); 
+engine.setAlgorithm(GeneticAlgorithm.EpsilonCrowdingNSGII);
+engine.addOperator(new AddNodeMutator());
+engine.addOperator(new RemoveNodeMutator());
+engine.addOperator(new AddSoftwareMutator());
+engine.addFitnessFuntion(new CloudCostFitness());
+engine.addFitnessFuntion(new CloudLatencyFitness());
+engine.setMutationSelectionStrategy(MutationSelectionStrategy.SPUTNIK_ELITIST);
+engine.setMaxGeneration(300);
+engine.run();
+</pre>
+    </div></section>
+
+ <!-- Next Dream -->
+    <section class="slide"><div>
+		<h2><span class="kevOrange ion-beaker"></span> Bio-inspired approches in progress...</h2>
+		<ul>
+			<li><span class="kevOrange">Pandemic</span> system synchronization <i class="kevGray">(Kevoree/Thesis)</i></li>
+			<li><span class="kevOrange">Artifical mutation</span> for problem solving <i class="kevGray">(Polymer)</i></li>
+			<li><span class="kevOrange">Generational crossover</span> hyper-heuristic <i class="kevGray">(Polymer)</i></li>
+			<li><span class="kevOrange">Diversity</span> for resiliance <i class="kevGray">(Polymer - w Brittany)</i></li>
+			<li><span class="kevOrange">Scary man</span> escape security <i class="kevGray">(Kevoree/Cloud)</i></li>
+			<li><span class="kevOrange">Self-healing</span> polymer <i class="kevGray">(Kevoree SmartHome/Grid/Cloud)</i></li>
+			<li><span class="kevOrange">Time relativity</span> in model navigation <i class="kevGray">(KMF/SmartGrid)</i></li>
+		</ul>
+        <img src="pictures/showmethecode.png" style="position:absolute;right:20px;top:220px;width:275px;" />
+	</div></section>
+
+
+<section class="slide" id="kevproject_site">
+    <div>
+        <h2>Kevoree.org for community</h2>
+        <div style="text-align: center;position:absolute;right:100px; top:190px;">
+        <object  data="figures/Kevoree.org.png" type="image/png" style="height:450px;"></object>
+    </div>
+    </div>
+</section>
+
+
+<section class="slide" id="kevoreeProject_2">
+	<div>
+        <h2>The Kevoree project outputs</h2>
+
+
+    <ul>
+        <li >Initial implementation for Java (Java, Scala, KotLin) <i class="kevGray">(2010,2011)</i></li>
+        <li ><span class="kevGray icon-android"></span> Management of Android devices <i class="kevGray">(2012)</i> (firefighters tactical decision system <span class="kevGray icon-ambulance"></span>)</li>
+        <li ><span class="kevGray icon-sitemap"></span> Peer to peer synchronization (Gossip, VectorClock) <i class="kevGray">(DAIS'12)</i></li>
+        <li >Management of embedded IoT nodes (C, Arduino, AVR 8bits) <i class="kevGray">(CBSE'12)</i></li>
+        <li ><span class="kevGray icon-cloud"></span> M@R driven Clouds (Amazon EC2, OpenStack) <i class="kevGray">(2012-2013)</i></li>
+        <li ><span class="kevGray icon-home"></span> Home automation gateway <i class="kevGray">(2012-2013)</i></li>
+        <li >Web Javascript runtime <i class="kevGray">(2013)</i></li>
+    </ul>
+	<div>
+</section>
+
+
+
+
+    <section class="slide"><div>
+        <h2><span class="kevOrange fa fa-tint"></span> Last months publications <span class="icon-comments-alt kevOrange"></span></h2>
+    <div>
+        <ul style="font-size:17px;">
+            <li><span class="kevOrange">MODELS'14</span> - A Native Versioning Concept to Support Historized Models at Runtime</li>
+            <li><span class="kevOrange">SEKE'14</span> - Reasoning at Runtime using time-distorted Contexts: A Models@run.time based Approach</li>
+            
+            <li><span class="kevOrange">SAC'14</span> - Generic Cloud Platform Multi-objective Optimization Leveraging Models@run.time<br/>
+                <i class="kevGray" style="padding-left:50px;">D. El Kateb, F. Fouquet, G. Nain, J. Augusto Meira, Y. Le Traon, M. Ackerman</i>
+            </li>
+            <li><span class="kevOrange">SGSec'14</span> - Reactive Security for Smart Grids using Models@run.time-Based Simulation and Reasoning<br/>
+                <i class="kevGray" style="padding-left:50px;">T. Hartmann, F. Fouquet, J. Klein, G. Nain and Y. Le Traon</i>
+            </li>
+            <li><span class="kevOrange">WICSA'14</span> - Scapegoat: an Adaptive monitoring framework for Component-based systems<br/>
+                <i class="kevGray" style="padding-left:50px;">I. Gonzalez-Herrera, E. Daubert, J. Bourcier, W. Rudametkin, O. Barais, F. Fouquet and J-M Jézéquel</i>
+            </li>
+            <li><span class="kevOrange">Tutorial CompArch'14,Middleware'13</span> - Designing and Evolving Distributed Architecture using Kevoree</li>
+        </ul>
+    </div>
+	<p>Kevoree is open source <span class="fa fa-github"></span> try it, <a href="http://kevoree.org">kevoree.org</a>.</p>	
+	</div></section>  
+<section class="slide" id="ref">
+	<div>
+        <h2>Other References</h2>
+    <ul style="font-size: 12px;">
+        <li>Fouquet, Francois and Daubert, Erwan and Plouzeau, Noel and Barais, Olivier and Bourcier, Johann and
+            Jezequel, Jean-Marc -- Dissemination of reconfiguration policies on mesh networks
+        </li>
+        <li>F. Fouquet, O. Barais, N. Plouzeau, J-M. Jézéquel, B. Morin and F. Fleurey. -- A Dynamic Component Model for
+            Cyber Physical Systems. -- In CBSE: 15th International ACM SIGSOFT Symposium on Component Based Software
+            Engineering. Bertinoro, Italy, June 2012.
+        </li>
+        <li>E. Daubert, F. Fouquet, O. Barais, G. Nain, G. Sunyé, J-M. Jézéquel, J-L. Pazat and B. Morin. -- A
+            models@runtime framework for designing and managing Service-Based Applications. -- In ICSE Workshop on
+            European Sofware Services and Systems Research - Research and Challenges (S-Cube). Zurich, Switzerland, May
+            2012.
+        </li>
+        <li>Nain, Grégory , Fouquet, François , Morin, Brice , Barais, Olivier and
+            Jézéquel, Jean-Marc (2010) Integrating IoT and IoS with a Component-Based approach. In Procedings of
+            the 36th EUROMICRO Conference on Software Engineering and Advanced Applications (SEAA 2010). Lille,
+            France.
+        </li>
+        <li>André, Francoise, Daubert, Erwan , Nain Grégory , Morin, Brice and Barais,
+            Olivier (2010) F4Plan: An Approach to build Efficient Adaptation Plans. In MobiQuitous.
+        </li>
+        <li>Brice Morin, Olivier Barais, Grégory Nain, Jean-Marc Jézéquel: Taming
+            Dynamically Adaptive Systems using models and aspects. ICSE 2009: 122-132
+        </li>
+        <li>Brice Morin, Olivier Barais, Jean-Marc Jézéquel, Franck Fleurey, Arnor
+            Solberg:s Models@Run.time to Support Dynamic Adaptation. IEEE Computer 42(10): 44-51 (2009)
+        </li>
+    </ul>
+<div style="position:absolute; top:570px; left:200px;">
+    <h2 style="text-align: center;font-size: 30px;">Kevoree is open source <span class="iconraph">U</span>, try it at
+        <a href="http://kevoree.org">kevoree.org</a></h2>
+</div
+	</div>
+</section>
+
+<section class="slide" id="heads_consortium">
+    <div>
+        <h2>Kevoree Consortium and projects</h2>
+    	<img src="figures/LogoKevoree.png" style="position:absolute;top: 190px;left:100px;width:700px;"/>
+    	<img src="figures/banner-4.png" style="position:absolute;top: 290px;left:0px;width:400px;"/>
+    	<img src="figures/HeadsBannerLarge.png" style="position:absolute;top: 290px;left:500px;width:400px;"/>
+   </div>
+ 
+</section>
+
+
+    <section class="slide shout"><div>
+    <h2><span class="kevOrange">></span>Thank you<br /> <span style="font-size:50px;">Questions <span class="kevOrange ion-help-circled"></span></span> </h2>
+    </div></section>   
+        
+        
+	<p class="badge"><a href="http://kevoree.org">Kevoree project</a></p>
+	<div class="progress"><div></div></div>
+
+
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+	<script src="shower/shower.min.js"></script>
+
+
+
+</body>
+</html>
