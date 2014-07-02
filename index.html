@@ -1376,6 +1376,11 @@
     </div></section>
 
 <!-- Eclipse Plugin -->
+   <section class="slide"><div>
+        <h2 style="width:1000px;"><span class="kevOrange fa fa-book"> </span> Eclipse developement environement</h2>
+        <img src="figures/KevoreeCRunner.png" style="position:absolute; float:left; right:150px; top:180px; height:430px; border-radius:5px;" />
+    </div></section>
+
     <section class="slide"><div>
         <h2><span class="kevOrange fa fa-spin fa-cog"> </span> Kevoree Platforms</h2>
         <img src="figures/Runtime.png" style="position:absolute; float:left; right:10px; top:90px; height:245px;" />
@@ -1416,7 +1421,7 @@
 </div></section>
 
 <section class="slide"><div>
-        <h2>Environment Setup 1/2</h2>
+        <h2>Environment Setup 1/3</h2>
     	<ul>
         <li ><strong class="kevOrange">You need</strong>
     	<ul>
@@ -1441,16 +1446,40 @@
 </div></section>
 
 <section class="slide"><div>
-        <h2>Environment Setup 2/2</h2>
+        <h2>Environment Setup 2/3</h2>
     	<ul>
         <li ><strong class="kevOrange">You must be able to</strong>
     	<ul>
         <li >set the environment variables <BR/> <span class="kevOrange">> source env.sh | env.bat</span>
         </li>
-        <li >start Kevoree editor <BR/> <span class="kevOrange">> java -jar editor.jar</span>
+        <li >
+        start several Java Kevoree containers  <BR/> <span class="kevOrange">> java -jar org.kevoree.platform.standalone.gui.public-3.7.0.jar</span>	
+	<p style="font-size:14pt; padding:0pt;bottom:0pt;margin-bottom:0pt">(select your own public group name)</p>
+</li>        
+
+        <li >start Kevoree editor <BR/> <span class="kevOrange">> java -jar org.kevoree.tools.ui.editor-3.7.0.jar</span>
+	<p  style="font-size:14pt; padding:0pt;bottom:0pt;margin-bottom:0pt">(Pull your model from your own public group name modify the model and push it)</p>
+        </li>
+        </ul>
+                </li>
+                </ul>
+</div></section>
+
+<section class="slide"><div>
+        <h2>Environment Setup 3/3</h2>
+    	<ul>
+        <li ><strong class="kevOrange">You must be able to</strong>
+    	<ul>
+        <li >set the environment variables <BR/> <span class="kevOrange">> source env.sh | env.bat</span>
         </li>
         <li >
-        start several Java Kevoree containers  <BR/> <span class="kevOrange">java -jar platform-gui.jar</span></li>        
+        start several Java Kevoree containers  <BR/> <span class="kevOrange">> java -jar org.kevoree.platform.standalone.gui-3.7.0.jar</span>	
+	<p style="font-size:14pt; padding:0pt;bottom:0pt;margin-bottom:0pt">(start a platform with a local group)</p>
+</li>        
+
+        <li >start Kevoree editor <BR/> <span class="kevOrange">> java -jar org.kevoree.tools.ui.editor-3.7.0.jar</span>
+	<p  style="font-size:14pt; padding:0pt;bottom:0pt;margin-bottom:0pt">(Pull your model from your local IP (localhost:9000) modify the model and push it)</p>
+        </li>
         </ul>
                 </li>
                 </ul>
