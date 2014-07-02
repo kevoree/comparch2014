@@ -1636,6 +1636,58 @@
 </section>
 
 
+<section class="slide" id="pactise1_3">
+    <div style="height: 100%; margin-left:0pt;border-left:0pt;padding:0pt;margin:0pt;width: 1024px;">
+        <h2>First global distributed application</h2>
+        <div style="width: 65%;height:100%; color: white; background: #000; float:left;">
+            <div style="top:0%;width:90%;margin-left: 10%">
+
+    	<ul>
+        <li ><strong class="kevOrange">Start a platform with a public MQTT group</strong>	
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
+        <li >> java -jar org.kevoree.platform.standalone.gui.public-3.7.0.jar</li>
+        </ul>
+
+        </li>
+        <li ><strong class="kevOrange">Put the same group name: comparch2014 and a different Node name</strong>
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
+        <li >From the editor: File -> Open from a public gateway (comparch2014) 
+        </li>
+        </ul>
+                </li>
+
+        <li ><strong class="kevOrange">Import Java toy and MQTT library</strong>
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
+        <li >Anyone can now update the running systems. 
+        </li>
+        </ul>
+                </li>
+
+        <li ><strong class="kevOrange">Update the model</strong>
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
+        <li >I will create a model with n <i>ToyConsoles</i> bound through a <i>MQTT channel</i>
+        </li>
+        </ul>
+                </li>
+
+                        </ul>
+
+            </div>
+        </div>
+<div style="width: 35%;height:100%; float:right;">
+            <div style="text-align:center;">
+
+                <object style="height:260px;" data="figures/DistributedChat.png"></object>
+                <ul>
+
+                <ul><li>Push the model</li></ul>
+        		</ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="slide shout" id="pratical2">
     <h2><span class="kevOrange">></span>Let's try it: <BR/> Practice 2</h2>
         <br>
@@ -1664,7 +1716,7 @@
         <h2>KevoreeFramework, Java Annotation API</h2>
         <div style="width: 50%;height:100%; color: white; background: #000; float:left;">
             <div style="top:0%;width:90%;margin-left: 10%">
-    	<ul>
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
         <li ><strong class="kevOrange">Plain Old Java Class approach ...</strong>
         </li>
         <li ><strong class="kevOrange">Declare Type contract as header of Java Class</strong>
@@ -1674,7 +1726,7 @@
         </ul>
                 </li>
         <li ><strong class="kevOrange">Declare life-cycle method on simple void method</strong>
-    	<ul>
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
         <li >@Start, @Stop, @Update (dictionary update)
         </li>
         </ul>
@@ -1725,7 +1777,7 @@ public class HelloProducerComponent implements HelloProductionListener {
         <li ><strong class="kevOrange">ComponentType == Java Class</strong>
         </li>
         <li ><strong class="kevOrange">@ComponentType or @ComponentFragment</strong>
-    	<ul>
+    	<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
         <li >@Input & @Output & @Param to declare component type contract
         </li>
         </ul>
@@ -2144,8 +2196,8 @@ KevScriptService kevScriptService;
         <h2>KevoreeFramework, KevScript</h2>
     	<ul>
         <li ><strong class="kevOrange">Scripting language to manipulate models</strong>
-        <ul>
-        <li >Comments -> // this is a comment
+<ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
+                <li >Comments -> // this is a comment
         </li>
 
         <li >Namespace -> namespace space42 <BR/> attach node0, node1 space42
@@ -2173,8 +2225,8 @@ KevScriptService kevScriptService;
         <h2>KevoreeFramework, KevScript</h2>
     	<ul>
         <li ><strong class="kevOrange">Scripting language to manipulate models</strong>
-        <ul>
-        <li >remove -> remove node0 <BR/> remove node0.comp0
+       <ul style="font-size:15pt;bottom:0pt;margin-bottom:0pt;padding-bottom:0pt;">
+         <li >remove -> remove node0 <BR/> remove node0.comp0
         </li>
         <li >move -> move node0.comp0 node1
         </li>
